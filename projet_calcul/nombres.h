@@ -63,7 +63,10 @@ protected:
 	int den_img;
 	void set_string_associe();
 public:
-	ComplexeRationnel(string string_associe, int re = 0, int img = 0, int den_re = 1, int den_img = 1); // : ComplexeReel( (double) re, (double) img), den_re(den_re), den_img(den_img)
+	ComplexeRationnel(string string_associe);
+	// : ComplexeReel(string_associe), den_re(0), den_img(0) { /* parsing string_associe to attributes */ }
+	ComplexeRationnel(double re = 0, double img = 0, int den_re = 1, int den_img = 1);
+	// : ComplexeReel((double)re, (double)img), den_re(den_re), den_img(den_img) { }
 	void set_num_re(int num_re); // cast int->double
 	void set_num_img(int num_img);
 	int get_num_re(); // cast double->int
