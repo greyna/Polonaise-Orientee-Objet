@@ -28,12 +28,16 @@ ComplexeReel::ComplexeReel(double re, double img)
 //ComplexeRationnel::ComplexeRationnel(string string_associe, int re, int img, int den_re, int den_img)
 //: ComplexeReel(string_associe, (double) re, (double) img), den_re(den_re), den_img(den_img) { }
 ComplexeRationnel(string string_associe)
-: ComplexeReel(string_associe), den_re(0), den_img(0) { /* parsing string_associe to attributes */ }
+: ComplexeReel(string_associe), den_re(1), den_img(1) { /* parsing string_associe to attributes */ }
 ComplexeRationnel(double re = 0, double img = 0, int den_re = 1, int den_img = 1)
 : ComplexeReel((double)re, (double)img), den_re(den_re), den_img(den_img) { }
 
-ComplexeEntier::ComplexeEntier(string string_associe, int re, int img)
-: ComplexeRationnel(string_associe, re, img, 1, 1) { }
+//ComplexeEntier::ComplexeEntier(string string_associe, int re, int img)
+//: ComplexeRationnel(string_associe, re, img, 1, 1) { }
+ComplexeEntier(string string_associe)
+: ComplexeRationnel(string_associe), den_re(1), den_img(1) { /* parsing string_associe to attributes */ }
+ComplexeEntier(int re = 0, int img = 0)
+: ComplexeRationnel((double)re, (double)img), den_re(1), den_img(1) { }
 
 Reel::Reel(string string_associe, double valeur)
 : ComplexeReel(string_associe, valeur, 0) { }
