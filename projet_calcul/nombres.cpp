@@ -1,3 +1,4 @@
+
 #include "nombres.h"
 
 using namespace std;
@@ -25,28 +26,30 @@ ComplexeReel::ComplexeReel(string string_associe)
 ComplexeReel::ComplexeReel(double re, double img)
 : Nombre(), re(re), img(img) { }
 
-//ComplexeRationnel::ComplexeRationnel(string string_associe, int re, int img, int den_re, int den_img)
-//: ComplexeReel(string_associe, (double) re, (double) img), den_re(den_re), den_img(den_img) { }
-ComplexeRationnel(string string_associe)
+ComplexeRationnel::ComplexeRationnel(string string_associe)
 : ComplexeReel(string_associe), den_re(1), den_img(1) { /* parsing string_associe to attributes */ }
-ComplexeRationnel(double re = 0, double img = 0, int den_re = 1, int den_img = 1)
+ComplexeRationnel::ComplexeRationnel(int re, int den_re, int img, int den_img)
 : ComplexeReel((double)re, (double)img), den_re(den_re), den_img(den_img) { }
 
-//ComplexeEntier::ComplexeEntier(string string_associe, int re, int img)
-//: ComplexeRationnel(string_associe, re, img, 1, 1) { }
-ComplexeEntier(string string_associe)
-: ComplexeRationnel(string_associe), den_re(1), den_img(1) { /* parsing string_associe to attributes */ }
-ComplexeEntier(int re = 0, int img = 0)
-: ComplexeRationnel((double)re, (double)img), den_re(1), den_img(1) { }
+ComplexeEntier::ComplexeEntier(string string_associe)
+: ComplexeRationnel(string_associe) { /* parsing string_associe to attributes */ }
+ComplexeEntier::ComplexeEntier(int re, int img)
+: ComplexeRationnel(re, 1, img) { }
 
-Reel::Reel(string string_associe, double valeur)
-: ComplexeReel(string_associe, valeur, 0) { }
+Reel::Reel(string string_associe)
+: ComplexeReel(string_associe) { /* parsing string_associe to attributes */ }
+Reel::Reel(double valeur)
+: ComplexeReel(valeur) { }
 
-Rationnel::Rationnel(string string_associe, int nominateur, int denominateur)
-: ComplexeRationnel(string_associe, nominateur, 0, denominateur, 1) { }
+Rationnel::Rationnel(string string_associe)
+: ComplexeRationnel(string_associe) { /* parsing string_associe to attributes */ }
+Rationnel::Rationnel(int num, int den)
+: ComplexeRationnel(num, den) { }
 
-Entier::Entier(string string_associe, int valeur)
-: Rationnel(string_associe, valeur, 1) { }
+Entier::Entier(string string_associe)
+: Rationnel(string_associe) { /* parsing string_associe to attributes */ }
+Entier::Entier(int valeur)
+: Rationnel(valeur, 1) { }
 
 // --------------------------------------------------------------------
 // METHODES
@@ -65,7 +68,7 @@ void Reel::set_string_associe() { }
 void Rationnel::set_string_associe() { }
 void Entier::set_string_associe() { }
 
-// Protection des double modifié par des int passés en paramètres à cause de l'héritage
+// Les classes filles doivent utiliser ces accesseurs pour les numérateurs (auto cast)
 void ComplexeRationnel::set_num_re(int num_re) { re = (double) num_re; }
 void ComplexeRationnel::set_num_img(int num_img) { img = (double) num_img; }
 

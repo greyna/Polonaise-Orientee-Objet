@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <iostream>
@@ -27,7 +28,9 @@ class NombreException
 protected:
 	string message;
 public:
-	NombreException(string message); // : message(message)
+	NombreException(string message);
+	// : message(message)
+	
 	void sendMessage();
 };
 
@@ -40,6 +43,7 @@ public:
 	// : Expression(string_associe) { }
 	Nombre();
 	// : Expression() { }
+	
 	bool isNumber() const;
 };
 
@@ -64,9 +68,11 @@ protected:
 	void set_string_associe();
 public:
 	ComplexeRationnel(string string_associe);
-	// : ComplexeReel(string_associe), den_re(0), den_img(0) { /* parsing string_associe to attributes */ }
-	ComplexeRationnel(int re = 0, int img = 0, int den_re = 1, int den_img = 1);
+	// : ComplexeReel(string_associe), den_re(1), den_img(1) { /* parsing string_associe to attributes */ }
+	ComplexeRationnel(int re = 0, int den_re = 1, int img = 0, int den_img = 1);
 	// : ComplexeReel((double)re, (double)img), den_re(den_re), den_img(den_img) { }
+	
+	// Les classes filles doivent utiliser ces accesseurs pour les numérateurs (auto cast)
 	void set_num_re(int num_re); // cast int->double
 	void set_num_img(int num_img);
 	int get_num_re(); // cast double->int
@@ -79,9 +85,9 @@ protected:
 	void set_string_associe();
 public:
 	ComplexeEntier(string string_associe);
-	// : ComplexeRationnel(string_associe), den_re(0), den_img(0) { /* parsing string_associe to attributes */ }
+	// : ComplexeRationnel(string_associe) { /* parsing string_associe to attributes */ }
 	ComplexeEntier(int re = 0, int img = 0);
-	// : ComplexeRationnel((double)re, (double)img), den_re(1), den_img(1) { }
+	// : ComplexeRationnel(re, 1, img) { }
 };
 
 class Reel : public virtual ComplexeReel
@@ -89,7 +95,10 @@ class Reel : public virtual ComplexeReel
 protected:
 	void set_string_associe();
 public:
-	Reel(string string_associe, double valeur = 0); // : ComplexeReel(valeur, 0)
+	Reel(string string_associe);
+	// : ComplexeReel(string_associe) { /* parsing string_associe to attributes */ }
+	Reel(double valeur = 0);
+	// : ComplexeReel(valeur) { }
 };
 
 class Rationnel : public ComplexeRationnel, public Reel
@@ -97,7 +106,10 @@ class Rationnel : public ComplexeRationnel, public Reel
 protected:
 	void set_string_associe();
 public:
-	Rationnel(string string_associe, int nominateur = 0, int denominateur = 1); // : ComplexeRationnel(nominateur, 0, denominateur, 1)
+	Rationnel(string string_associe);
+	// : ComplexeRationnel(string_associe) { /* parsing string_associe to attributes */ }
+	Rationnel(int num = 0, int den = 1);
+	// : ComplexeRationnel(num, den) { }
 };
 
 class Entier : public Rationnel
@@ -105,7 +117,10 @@ class Entier : public Rationnel
 protected:
 	void set_string_associe();
 public:
-	Entier(string string_associe, int valeur = 0); // : Rationnel(string_associe, valeur, 1)
+	Entier(string string_associe);
+	// : Rationnel(string_associe) { /* parsing string_associe to attributes */ }
+	Entier(int valeur = 0);
+	// : Rationnel(num, 1) { }
 };
 
 
