@@ -10,17 +10,8 @@ using namespace calcul;
 OperationException::OperationException(string message)
 : message(message) { }
 
-Operation::Operation(string string_associe)
+Operation::Operation(const string &  string_associe)
 : Expression(string_associe) { }
-
-Binaire::Binaire(string string_associe)
-: Operation(string_associe) { }
-
-Unaire::Unaire(string string_associe)
-: Operation(string_associe) { }
-
-Pile::Pile(string string_associe)
-: Operation(string_associe) { }
 
 // --------------------------------------------------------------------
 // METHODES
@@ -30,39 +21,8 @@ void OperationException::sendMessage() { cout<<"Exception d'opération levée : 
 void Operation::set_string_associe() { }
 bool Operation::isNumber() const { return false; }
 
-Nombre Binaire::evaluer(const Nombre & operande1, const Nombre & operande2, enum Mode mode) {
-	Nombre resultat;
-	resultat= operande1;
-	return resultat;
-	
-	if (string_associe=="+") {
-		
-	}
-	else if (string_associe=="-") {
-		
-	}
-	else if (string_associe=="*") {
-		
-	}
-	else if (string_associe=="/") {
-		
-	}
-	else if (string_associe=="MOD") {
-		
-	}
-	else if (string_associe=="POW") {
-		
-	}
-	else  {
-		cout<<"erreur : "<<string_associe<<" n'est pas un opérateur connu\n";
-	}
-}
+Nombre& Operation::unaire (Nombre& operande, enum Mode mode, enum ModeAngle mode_angle) {
 
-Nombre Unaire::evaluer(const Nombre & operande, enum Mode mode, enum ModeAngle mode_angle) {
-	Nombre resultat;
-	resultat= operande;
-	return resultat;
-	
 	if (string_associe=="SIN") {
 		
 	}
@@ -102,9 +62,6 @@ Nombre Unaire::evaluer(const Nombre & operande, enum Mode mode, enum ModeAngle m
 	else if (string_associe=="FACT") {
 		
 	}
-	else if (string_associe=="EVAL") {
-		
-	}
 	else if (string_associe=="SIGN") {
 		
 	}
@@ -113,7 +70,32 @@ Nombre Unaire::evaluer(const Nombre & operande, enum Mode mode, enum ModeAngle m
 	}
 }
 
-void Pile::evaluer(/*Pile*/Expression & pileStockage, enum Mode mode) {
+Nombre& Operation::binaire (const Nombre& operande1, const Nombre& operande2, enum Mode mode) {
+	
+	if (string_associe=="+") {
+		
+	}
+	else if (string_associe=="-") {
+		
+	}
+	else if (string_associe=="*") {
+		
+	}
+	else if (string_associe=="/") {
+		
+	}
+	else if (string_associe=="MOD") {
+		
+	}
+	else if (string_associe=="POW") {
+		
+	}
+	else  {
+		cout<<"erreur : "<<string_associe<<" n'est pas un opérateur connu\n";
+	}
+}
+
+void Operation::pile (PileExpression& pile_stockage, enum Mode mode, int x, int y) {
 	
 	if (string_associe=="SWAP") {
 		
@@ -131,6 +113,16 @@ void Pile::evaluer(/*Pile*/Expression & pileStockage, enum Mode mode) {
 		
 	}
 	else if (string_associe=="DROP") {
+		
+	}
+	else  {
+		cout<<"erreur : "<<string_associe<<" n'est pas un opérateur connu\n";
+	}
+}
+
+Expression& Operation::eval (PileExpression operande, enum Mode mode, enum ModeAngle mode_angle) {
+	
+	if (string_associe=="EVAL") {
 		
 	}
 	else  {
