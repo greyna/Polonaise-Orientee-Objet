@@ -6,7 +6,7 @@ using namespace calcul;
 // --------------------------------------------------------------------
 // CONSTRUCTEURS
 // --------------------------------------------------------------------
-Expression::Expression(const string & string_associe)
+Expression::Expression(const QString & string_associe)
 : string_associe(string_associe) { }
 Expression::Expression()
 : string_associe("") { }
@@ -14,4 +14,4 @@ Expression::Expression()
 // --------------------------------------------------------------------
 // METHODES
 // --------------------------------------------------------------------
-string Expression::get_string_associe() const {	return string_associe; }
+QString Expression::get_string_associe() const {	return string_associe; }

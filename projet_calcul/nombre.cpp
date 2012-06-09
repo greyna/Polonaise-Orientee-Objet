@@ -18,7 +18,9 @@ Nombre::Nombre()
 
 
 ComplexeReel::ComplexeReel(const string & string_associe)
-: Nombre(string_associe), re(0), img(0) { /* parsing string_associe to attributes */ }
+: Nombre(string_associe), re(0), img(0) {
+	int pos = string_associe.find("$");
+}
 ComplexeReel::ComplexeReel(double re, double img)
 : Nombre(), re(re), img(img) { set_string_associe(); }
 
@@ -50,8 +52,6 @@ Entier::Entier(int valeur)
 // --------------------------------------------------------------------
 // METHODES
 // --------------------------------------------------------------------
-string Expression::get_string_associe() const {	return string_associe; }
-
 void NombreException::sendMessage() { cout<<"Exception de nombre levée : "<<message<<"\n"; }
 
 bool Nombre::isNumber() const { return true; }
