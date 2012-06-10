@@ -18,4 +18,6 @@ HEADERS  += widget.h \
 
 FORMS    += widget.ui \
     widget.ui \
+    widget.ui \
+    onglet2.ui \
     onglet.ui

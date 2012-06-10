@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'widget.h'
 **
-** Created: Sun Jun 10 01:46:07 2012
+** Created: Mon Jun 11 00:27:47 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MyWidget[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,13 +31,28 @@ static const uint qt_meta_data_MyWidget[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      10,    9,    9,    9, 0x08,
+      10,    9,    9,    9, 0x0a,
+      23,    9,    9,    9, 0x0a,
+      37,    9,    9,    9, 0x0a,
+      51,    9,    9,    9, 0x0a,
+      65,    9,    9,    9, 0x0a,
+      79,    9,    9,    9, 0x0a,
+      93,    9,    9,    9, 0x0a,
+     107,    9,    9,    9, 0x0a,
+     121,    9,    9,    9, 0x0a,
+     135,    9,    9,    9, 0x0a,
+     149,    9,    9,    9, 0x0a,
+     163,    9,    9,    9, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MyWidget[] = {
-    "MyWidget\0\0slotChild()\0"
+    "MyWidget\0\0dupPressed()\0num0Pressed()\0"
+    "num1Pressed()\0num2Pressed()\0num3Pressed()\0"
+    "num4Pressed()\0num5Pressed()\0num6Pressed()\0"
+    "num7Pressed()\0num8Pressed()\0num9Pressed()\0"
+    "enterPressed()\0"
 };
 
 void MyWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -46,7 +61,18 @@ void MyWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         Q_ASSERT(staticMetaObject.cast(_o));
         MyWidget *_t = static_cast<MyWidget *>(_o);
         switch (_id) {
-        case 0: _t->slotChild(); break;
+        case 0: _t->dupPressed(); break;
+        case 1: _t->num0Pressed(); break;
+        case 2: _t->num1Pressed(); break;
+        case 3: _t->num2Pressed(); break;
+        case 4: _t->num3Pressed(); break;
+        case 5: _t->num4Pressed(); break;
+        case 6: _t->num5Pressed(); break;
+        case 7: _t->num6Pressed(); break;
+        case 8: _t->num7Pressed(); break;
+        case 9: _t->num8Pressed(); break;
+        case 10: _t->num9Pressed(); break;
+        case 11: _t->enterPressed(); break;
         default: ;
         }
     }
@@ -85,9 +111,9 @@ int MyWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 12;
     }
     return _id;
 }
