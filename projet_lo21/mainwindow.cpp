@@ -3,6 +3,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+
     connect(ui->Button0,SIGNAL(clicked()),this,SLOT(num0Pressed()));
     connect(ui->Button1,SIGNAL(clicked()),this,SLOT(num1Pressed()));
     connect(ui->Button2,SIGNAL(clicked()),this,SLOT(num2Pressed()));

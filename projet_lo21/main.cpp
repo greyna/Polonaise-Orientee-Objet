@@ -1,11 +1,13 @@
 #include <QtGui/QApplication>
-#include "mainwindow.h"
+#include "onglet.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    Onglet o1,o2;
+    o1.show();
+    o2.show();
+
     
     return a.exec();
 }

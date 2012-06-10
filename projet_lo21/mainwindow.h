@@ -18,6 +18,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QTabWidget o1,o2;
+
 
 private slots:
     void num0Pressed();

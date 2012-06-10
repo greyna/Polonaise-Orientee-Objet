@@ -1,21 +1,21 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2012-05-28T15:07:28
+# Project created by QtCreator 2012-06-09T23:25:40
 #
 #-------------------------------------------------
 
 QT       += core gui
 
-TARGET = projet_lo21
+TARGET = test
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    onglet.cpp
+        widget.cpp
 
-HEADERS  += mainwindow.h \
-    onglet.h
+HEADERS  += widget.h \
+    ui_onglet.h
 
-FORMS    += mainwindow.ui \
+FORMS    += widget.ui \
+    widget.ui \
     onglet.ui
