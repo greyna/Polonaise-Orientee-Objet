@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'onglet.ui'
 **
-** Created: Sun Jun 10 23:05:15 2012
+** Created: Thu Jun 14 22:40:26 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -45,7 +45,7 @@ public:
     QPushButton *Button2;
     QPushButton *Button3;
     QPushButton *Button0;
-    QPushButton *Buttonpoint;
+    QPushButton *Buttonvirgule;
     QPushButton *Buttonswap;
     QPushButton *Buttonmean;
     QPushButton *Buttonln;
@@ -55,17 +55,17 @@ public:
     QPushButton *Buttontanh;
     QPushButton *Buttontan;
     QPushButton *Buttoncos;
-    QPushButton *Buttonmod_2;
-    QPushButton *Buttonpow;
-    QPushButton *Buttonsqr;
-    QPushButton *Buttoncube;
-    QPushButton *Buttonsum;
     QPushButton *Buttonmod;
+    QPushButton *Buttonxy;
+    QPushButton *Buttonx2;
+    QPushButton *Buttonx3;
+    QPushButton *Buttonsum;
+    QPushButton *Buttondollar;
     QTextBrowser *resultdisplay;
     QPushButton *Buttonsign;
     QPushButton *Buttonplus;
-    QPushButton *Buttonmoin;
-    QPushButton *Buttonmultiplier;
+    QPushButton *Buttonmoins;
+    QPushButton *Buttonfois;
     QPushButton *Buttondiviser;
     QPushButton *Buttoneval;
     QPushButton *Buttoninv;
@@ -167,10 +167,10 @@ public:
 
         gridLayout->addWidget(Button0, 10, 4, 1, 2);
 
-        Buttonpoint = new QPushButton(gridLayoutWidget);
-        Buttonpoint->setObjectName(QString::fromUtf8("Buttonpoint"));
+        Buttonvirgule = new QPushButton(gridLayoutWidget);
+        Buttonvirgule->setObjectName(QString::fromUtf8("Buttonvirgule"));
 
-        gridLayout->addWidget(Buttonpoint, 10, 6, 1, 1);
+        gridLayout->addWidget(Buttonvirgule, 10, 6, 1, 1);
 
         Buttonswap = new QPushButton(gridLayoutWidget);
         Buttonswap->setObjectName(QString::fromUtf8("Buttonswap"));
@@ -217,35 +217,35 @@ public:
 
         gridLayout->addWidget(Buttoncos, 8, 1, 1, 1);
 
-        Buttonmod_2 = new QPushButton(gridLayoutWidget);
-        Buttonmod_2->setObjectName(QString::fromUtf8("Buttonmod_2"));
+        Buttonmod = new QPushButton(gridLayoutWidget);
+        Buttonmod->setObjectName(QString::fromUtf8("Buttonmod"));
 
-        gridLayout->addWidget(Buttonmod_2, 5, 6, 1, 1);
+        gridLayout->addWidget(Buttonmod, 5, 6, 1, 1);
 
-        Buttonpow = new QPushButton(gridLayoutWidget);
-        Buttonpow->setObjectName(QString::fromUtf8("Buttonpow"));
+        Buttonxy = new QPushButton(gridLayoutWidget);
+        Buttonxy->setObjectName(QString::fromUtf8("Buttonxy"));
 
-        gridLayout->addWidget(Buttonpow, 6, 2, 1, 1);
+        gridLayout->addWidget(Buttonxy, 6, 2, 1, 1);
 
-        Buttonsqr = new QPushButton(gridLayoutWidget);
-        Buttonsqr->setObjectName(QString::fromUtf8("Buttonsqr"));
+        Buttonx2 = new QPushButton(gridLayoutWidget);
+        Buttonx2->setObjectName(QString::fromUtf8("Buttonx2"));
 
-        gridLayout->addWidget(Buttonsqr, 7, 2, 1, 1);
+        gridLayout->addWidget(Buttonx2, 7, 2, 1, 1);
 
-        Buttoncube = new QPushButton(gridLayoutWidget);
-        Buttoncube->setObjectName(QString::fromUtf8("Buttoncube"));
+        Buttonx3 = new QPushButton(gridLayoutWidget);
+        Buttonx3->setObjectName(QString::fromUtf8("Buttonx3"));
 
-        gridLayout->addWidget(Buttoncube, 8, 2, 1, 1);
+        gridLayout->addWidget(Buttonx3, 8, 2, 1, 1);
 
         Buttonsum = new QPushButton(gridLayoutWidget);
         Buttonsum->setObjectName(QString::fromUtf8("Buttonsum"));
 
         gridLayout->addWidget(Buttonsum, 5, 2, 1, 1);
 
-        Buttonmod = new QPushButton(gridLayoutWidget);
-        Buttonmod->setObjectName(QString::fromUtf8("Buttonmod"));
+        Buttondollar = new QPushButton(gridLayoutWidget);
+        Buttondollar->setObjectName(QString::fromUtf8("Buttondollar"));
 
-        gridLayout->addWidget(Buttonmod, 5, 5, 1, 1);
+        gridLayout->addWidget(Buttondollar, 5, 5, 1, 1);
 
         resultdisplay = new QTextBrowser(gridLayoutWidget);
         resultdisplay->setObjectName(QString::fromUtf8("resultdisplay"));
@@ -262,15 +262,15 @@ public:
 
         gridLayout->addWidget(Buttonplus, 5, 7, 1, 1);
 
-        Buttonmoin = new QPushButton(gridLayoutWidget);
-        Buttonmoin->setObjectName(QString::fromUtf8("Buttonmoin"));
+        Buttonmoins = new QPushButton(gridLayoutWidget);
+        Buttonmoins->setObjectName(QString::fromUtf8("Buttonmoins"));
 
-        gridLayout->addWidget(Buttonmoin, 6, 7, 1, 1);
+        gridLayout->addWidget(Buttonmoins, 6, 7, 1, 1);
 
-        Buttonmultiplier = new QPushButton(gridLayoutWidget);
-        Buttonmultiplier->setObjectName(QString::fromUtf8("Buttonmultiplier"));
+        Buttonfois = new QPushButton(gridLayoutWidget);
+        Buttonfois->setObjectName(QString::fromUtf8("Buttonfois"));
 
-        gridLayout->addWidget(Buttonmultiplier, 7, 7, 1, 1);
+        gridLayout->addWidget(Buttonfois, 7, 7, 1, 1);
 
         Buttondiviser = new QPushButton(gridLayoutWidget);
         Buttondiviser->setObjectName(QString::fromUtf8("Buttondiviser"));
@@ -385,6 +385,7 @@ public:
         statusBar->setGeometry(QRect(0, 0, 3, 18));
 
         retranslateUi(Widget);
+
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
 
@@ -401,7 +402,7 @@ public:
         Button2->setText(QApplication::translate("Onglet", "2", 0, QApplication::UnicodeUTF8));
         Button3->setText(QApplication::translate("Onglet", "3", 0, QApplication::UnicodeUTF8));
         Button0->setText(QApplication::translate("Onglet", "0", 0, QApplication::UnicodeUTF8));
-        Buttonpoint->setText(QApplication::translate("Onglet", ",", 0, QApplication::UnicodeUTF8));
+        Buttonvirgule->setText(QApplication::translate("Onglet", ",", 0, QApplication::UnicodeUTF8));
         Buttonswap->setText(QApplication::translate("Onglet", "SWAP", 0, QApplication::UnicodeUTF8));
         Buttonmean->setText(QApplication::translate("Onglet", "MEAN", 0, QApplication::UnicodeUTF8));
         Buttonln->setText(QApplication::translate("Onglet", "LN", 0, QApplication::UnicodeUTF8));
@@ -411,16 +412,16 @@ public:
         Buttontanh->setText(QApplication::translate("Onglet", "TANH", 0, QApplication::UnicodeUTF8));
         Buttontan->setText(QApplication::translate("Onglet", "TAN", 0, QApplication::UnicodeUTF8));
         Buttoncos->setText(QApplication::translate("Onglet", "COS", 0, QApplication::UnicodeUTF8));
-        Buttonmod_2->setText(QApplication::translate("Onglet", "MOD", 0, QApplication::UnicodeUTF8));
-        Buttonpow->setText(QApplication::translate("Onglet", "x^y", 0, QApplication::UnicodeUTF8));
-        Buttonsqr->setText(QApplication::translate("Onglet", "x^2", 0, QApplication::UnicodeUTF8));
-        Buttoncube->setText(QApplication::translate("Onglet", "x^3", 0, QApplication::UnicodeUTF8));
+        Buttonmod->setText(QApplication::translate("Onglet", "MOD", 0, QApplication::UnicodeUTF8));
+        Buttonxy->setText(QApplication::translate("Onglet", "x^y", 0, QApplication::UnicodeUTF8));
+        Buttonx2->setText(QApplication::translate("Onglet", "x^2", 0, QApplication::UnicodeUTF8));
+        Buttonx3->setText(QApplication::translate("Onglet", "x^3", 0, QApplication::UnicodeUTF8));
         Buttonsum->setText(QApplication::translate("Onglet", "SUM", 0, QApplication::UnicodeUTF8));
-        Buttonmod->setText(QApplication::translate("Onglet", "$", 0, QApplication::UnicodeUTF8));
+        Buttondollar->setText(QApplication::translate("Onglet", "$", 0, QApplication::UnicodeUTF8));
         Buttonsign->setText(QApplication::translate("Onglet", "\302\261", 0, QApplication::UnicodeUTF8));
         Buttonplus->setText(QApplication::translate("Onglet", "+", 0, QApplication::UnicodeUTF8));
-        Buttonmoin->setText(QApplication::translate("Onglet", "-", 0, QApplication::UnicodeUTF8));
-        Buttonmultiplier->setText(QApplication::translate("Onglet", "*", 0, QApplication::UnicodeUTF8));
+        Buttonmoins->setText(QApplication::translate("Onglet", "-", 0, QApplication::UnicodeUTF8));
+        Buttonfois->setText(QApplication::translate("Onglet", "*", 0, QApplication::UnicodeUTF8));
         Buttondiviser->setText(QApplication::translate("Onglet", "/", 0, QApplication::UnicodeUTF8));
         Buttoneval->setText(QApplication::translate("Onglet", "EVAL", 0, QApplication::UnicodeUTF8));
         Buttoninv->setText(QApplication::translate("Onglet", "INV", 0, QApplication::UnicodeUTF8));

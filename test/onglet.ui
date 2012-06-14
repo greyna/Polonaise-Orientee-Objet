@@ -121,7 +121,7 @@
       </widget>
      </item>
      <item row="10" column="6">
-      <widget class="QPushButton" name="Buttonpoint">
+      <widget class="QPushButton" name="Buttonvirgule">
        <property name="text">
         <string>,</string>
        </property>
@@ -191,28 +191,28 @@
       </widget>
      </item>
      <item row="5" column="6">
-      <widget class="QPushButton" name="Buttonmod_2">
+      <widget class="QPushButton" name="Buttonmod">
        <property name="text">
         <string>MOD</string>
        </property>
       </widget>
      </item>
      <item row="6" column="2">
-      <widget class="QPushButton" name="Buttonpow">
+      <widget class="QPushButton" name="Buttonxy">
        <property name="text">
         <string>x^y</string>
        </property>
       </widget>
      </item>
      <item row="7" column="2">
-      <widget class="QPushButton" name="Buttonsqr">
+      <widget class="QPushButton" name="Buttonx2">
        <property name="text">
         <string>x^2</string>
        </property>
       </widget>
      </item>
      <item row="8" column="2">
-      <widget class="QPushButton" name="Buttoncube">
+      <widget class="QPushButton" name="Buttonx3">
        <property name="text">
         <string>x^3</string>
        </property>
@@ -226,7 +226,7 @@
       </widget>
      </item>
      <item row="5" column="5">
-      <widget class="QPushButton" name="Buttonmod">
+      <widget class="QPushButton" name="Buttondollar">
        <property name="text">
         <string>$</string>
        </property>
@@ -250,14 +250,14 @@
       </widget>
      </item>
      <item row="6" column="7">
-      <widget class="QPushButton" name="Buttonmoin">
+      <widget class="QPushButton" name="Buttonmoins">
        <property name="text">
         <string>-</string>
        </property>
       </widget>
      </item>
      <item row="7" column="7">
-      <widget class="QPushButton" name="Buttonmultiplier">
+      <widget class="QPushButton" name="Buttonfois">
        <property name="text">
         <string>*</string>
        </property>

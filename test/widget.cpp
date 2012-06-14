@@ -7,14 +7,20 @@ MyWidget::MyWidget(){
     nbr_onglets = 0;
     nbr_max = 10;
     onglets = new Onglet*[10];
-    MyWidget::add();
+    MyWidget::newOnglet();
     tab->resize(1000,450);
 
 }
 MyWidget::~MyWidget(){
+    //for(int i = 0; i < nbr_max; i++) ~QTabWidget::QTabWidget();
+    delete[] tab;
 }
 
-void MyWidget::add(){
+void MyWidget:: changeMode() {
+
+}
+
+void MyWidget::newOnglet(){
     QWidget *w = new QWidget;
     onglets[nbr_onglets] = new Onglet();
     onglets[nbr_onglets]->setupUi(w);
@@ -24,70 +30,217 @@ void MyWidget::add(){
 }
 
 void MyWidget::connects(Onglet* ong){
-    connect(ong->Buttondup,SIGNAL(clicked()),this,SLOT(dupPressed()));
-    connect(ong->Button0,SIGNAL(clicked()),this,SLOT(num0Pressed()));
-    connect(ong->Button1,SIGNAL(clicked()),this,SLOT(num1Pressed()));
-    connect(ong->Button2,SIGNAL(clicked()),this,SLOT(num2Pressed()));
-    connect(ong->Button3,SIGNAL(clicked()),this,SLOT(num3Pressed()));
-    connect(ong->Button4,SIGNAL(clicked()),this,SLOT(num4Pressed()));
-    connect(ong->Button5,SIGNAL(clicked()),this,SLOT(num5Pressed()));
-    connect(ong->Button6,SIGNAL(clicked()),this,SLOT(num6Pressed()));
-    connect(ong->Button7,SIGNAL(clicked()),this,SLOT(num7Pressed()));
-    connect(ong->Button8,SIGNAL(clicked()),this,SLOT(num8Pressed()));
-    connect(ong->Button9,SIGNAL(clicked()),this,SLOT(num9Pressed()));
-    connect(ong->Buttonegale,SIGNAL(clicked()),this,SLOT(enterPressed()));
+    connect(ong->_modComplexeON,SIGNAL(toggled(bool)),this,SLOT(complexeActive()));
+    connect(ong->_modComplexeOFF,SIGNAL(toggled(bool)),this,SLOT(complexeDesactive()));
+    connect(ong->Buttondup,SIGNAL(clicked()),this,SLOT(dup()));
+    connect(ong->Button0,SIGNAL(clicked()),this,SLOT(num0()));
+    connect(ong->Button1,SIGNAL(clicked()),this,SLOT(num1()));
+    connect(ong->Button2,SIGNAL(clicked()),this,SLOT(num2()));
+    connect(ong->Button3,SIGNAL(clicked()),this,SLOT(num3()));
+    connect(ong->Button4,SIGNAL(clicked()),this,SLOT(num4()));
+    connect(ong->Button5,SIGNAL(clicked()),this,SLOT(num5()));
+    connect(ong->Button6,SIGNAL(clicked()),this,SLOT(num6()));
+    connect(ong->Button7,SIGNAL(clicked()),this,SLOT(num7()));
+    connect(ong->Button8,SIGNAL(clicked()),this,SLOT(num8()));
+    connect(ong->Button9,SIGNAL(clicked()),this,SLOT(num9()));
+    connect(ong->Buttonegale,SIGNAL(clicked()),this,SLOT(enter()));
 
 }
 
-void MyWidget::dupPressed(){
-    //Si le nombre d'onglets ne d¨¦passe pas le nombre max
-    if(nbr_max > nbr_onglets){
-        MyWidget::add();
-    } else {
-
-    }
+void MyWidget::complexeActive(){
+    onglets[nbr_onglets-1]->Buttondollar->setEnabled(true);
 }
 
-void MyWidget::num0Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"0");
+void MyWidget::complexeDesactive(){
+    onglets[nbr_onglets-1]->Buttondollar->setEnabled(false);
 }
 
-void MyWidget::num1Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"1");
-}
-
-void MyWidget::num2Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"2");
-}
-
-void MyWidget::num3Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"3");
-}
-
-void MyWidget::num4Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"4");
-}
-
-void MyWidget::num5Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"5");
-}
-
-void MyWidget::num6Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"6");
-}
-
-void MyWidget::num7Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"7");
-}
-
-void MyWidget::num8Pressed(){
-    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"8");
-}
-
-void MyWidget::num9Pressed(){
+void MyWidget::constReel(){
     onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
 }
 
-void MyWidget::enterPressed(){
+void MyWidget::constRationel(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
 
+void MyWidget::constEntier(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::clavierBasic(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::clavierAvance(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::radian(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::degre(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::dup(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::drop(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::clear(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::swap(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::log(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::sinh(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::cosh(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::tanh(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::mean(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::ln(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::sin(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::cos(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::tan(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::sum(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::xy(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::x2(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::x3(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::fact(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::dollar(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::mod(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+
+void MyWidget::num0(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"0");
+}
+
+void MyWidget::num1(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"1");
+}
+
+void MyWidget::num2(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"2");
+}
+
+void MyWidget::num3(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"3");
+}
+
+void MyWidget::num4(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"4");
+}
+
+void MyWidget::num5(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"5");
+}
+
+void MyWidget::num6(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"6");
+}
+
+void MyWidget::num7(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"7");
+}
+
+void MyWidget::num8(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"8");
+}
+
+void MyWidget::num9(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+
+void MyWidget::virgule(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::plus(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::moins(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::fois(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::diviser(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::eval(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::sqrt(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::signe(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::inv(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
+}
+
+void MyWidget::enter(){
+    onglets[nbr_onglets-1]->piledisplay->setPlainText(onglets[nbr_onglets-1]->piledisplay->toPlainText()+"9");
 }

@@ -11,10 +11,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    moteurCalcul.cpp
 
 HEADERS  += widget.h \
-    ui_onglet.h
+    moteurCalcul.h \
+    operation.h \
+    pileExpression.h \
+    ui_onglet.h \
+    nombre.h \
+    factory.h \
+    expression.h \
+    cst.h
 
 FORMS    += widget.ui \
     widget.ui \
