@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'onglet.ui'
 **
-** Created: Thu Jun 14 22:40:26 2012
+** Created: Sat Jun 16 11:01:01 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -28,7 +28,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Onglet
+class Ui_Widget
 {
 public:
     QWidget *centralWidget;
@@ -79,6 +79,7 @@ public:
     QLabel *label;
     QRadioButton *radioButtonradian;
     QRadioButton *radioButtondegree;
+    QPushButton *Buttonapo;
     QGroupBox *groupBox_2;
     QRadioButton *_modEntiers;
     QRadioButton *_modRationnels;
@@ -97,15 +98,15 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(866, 402);
+        Widget->resize(890, 400);
         Widget->setMinimumSize(QSize(750, 400));
         Widget->setBaseSize(QSize(750, 400));
         centralWidget = new QWidget(Widget);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        centralWidget->setGeometry(QRect(10, 10, 851, 551));
+        centralWidget->setGeometry(QRect(0, 0, 891, 551));
         gridLayoutWidget = new QWidget(centralWidget);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(140, 20, 701, 351));
+        gridLayoutWidget->setGeometry(QRect(140, 20, 744, 351));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -334,8 +335,14 @@ public:
 
         radioButtondegree = new QRadioButton(gridLayoutWidget);
         radioButtondegree->setObjectName(QString::fromUtf8("radioButtondegree"));
+        radioButtondegree->setChecked(true);
 
         gridLayout->addWidget(radioButtondegree, 1, 2, 1, 1);
+
+        Buttonapo = new QPushButton(gridLayoutWidget);
+        Buttonapo->setObjectName(QString::fromUtf8("Buttonapo"));
+
+        gridLayout->addWidget(Buttonapo, 5, 4, 1, 1);
 
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
@@ -369,11 +376,13 @@ public:
         groupBox_4->setGeometry(QRect(10, 30, 111, 71));
         _modComplexeON = new QRadioButton(groupBox_4);
         _modComplexeON->setObjectName(QString::fromUtf8("_modComplexeON"));
+        _modComplexeON->setEnabled(true);
         _modComplexeON->setGeometry(QRect(10, 20, 143, 20));
-        _modComplexeON->setChecked(true);
+        _modComplexeON->setChecked(false);
         _modComplexeOFF = new QRadioButton(groupBox_4);
         _modComplexeOFF->setObjectName(QString::fromUtf8("_modComplexeOFF"));
         _modComplexeOFF->setGeometry(QRect(10, 40, 143, 20));
+        _modComplexeOFF->setChecked(true);
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(760, 0, 46, 13));
@@ -391,67 +400,69 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QApplication::translate("Onglet", "Onglet", 0, QApplication::UnicodeUTF8));
-        Button7->setText(QApplication::translate("Onglet", "7", 0, QApplication::UnicodeUTF8));
-        Button8->setText(QApplication::translate("Onglet", "8", 0, QApplication::UnicodeUTF8));
-        Button9->setText(QApplication::translate("Onglet", "9", 0, QApplication::UnicodeUTF8));
-        Button4->setText(QApplication::translate("Onglet", "4", 0, QApplication::UnicodeUTF8));
-        Button5->setText(QApplication::translate("Onglet", "5", 0, QApplication::UnicodeUTF8));
-        Button6->setText(QApplication::translate("Onglet", "6", 0, QApplication::UnicodeUTF8));
-        Button1->setText(QApplication::translate("Onglet", "1", 0, QApplication::UnicodeUTF8));
-        Button2->setText(QApplication::translate("Onglet", "2", 0, QApplication::UnicodeUTF8));
-        Button3->setText(QApplication::translate("Onglet", "3", 0, QApplication::UnicodeUTF8));
-        Button0->setText(QApplication::translate("Onglet", "0", 0, QApplication::UnicodeUTF8));
-        Buttonvirgule->setText(QApplication::translate("Onglet", ",", 0, QApplication::UnicodeUTF8));
-        Buttonswap->setText(QApplication::translate("Onglet", "SWAP", 0, QApplication::UnicodeUTF8));
-        Buttonmean->setText(QApplication::translate("Onglet", "MEAN", 0, QApplication::UnicodeUTF8));
-        Buttonln->setText(QApplication::translate("Onglet", "LN", 0, QApplication::UnicodeUTF8));
-        Buttonsinh->setText(QApplication::translate("Onglet", "SINH", 0, QApplication::UnicodeUTF8));
-        Buttonsin->setText(QApplication::translate("Onglet", "SIN", 0, QApplication::UnicodeUTF8));
-        Buttoncosh->setText(QApplication::translate("Onglet", "COSH", 0, QApplication::UnicodeUTF8));
-        Buttontanh->setText(QApplication::translate("Onglet", "TANH", 0, QApplication::UnicodeUTF8));
-        Buttontan->setText(QApplication::translate("Onglet", "TAN", 0, QApplication::UnicodeUTF8));
-        Buttoncos->setText(QApplication::translate("Onglet", "COS", 0, QApplication::UnicodeUTF8));
-        Buttonmod->setText(QApplication::translate("Onglet", "MOD", 0, QApplication::UnicodeUTF8));
-        Buttonxy->setText(QApplication::translate("Onglet", "x^y", 0, QApplication::UnicodeUTF8));
-        Buttonx2->setText(QApplication::translate("Onglet", "x^2", 0, QApplication::UnicodeUTF8));
-        Buttonx3->setText(QApplication::translate("Onglet", "x^3", 0, QApplication::UnicodeUTF8));
-        Buttonsum->setText(QApplication::translate("Onglet", "SUM", 0, QApplication::UnicodeUTF8));
-        Buttondollar->setText(QApplication::translate("Onglet", "$", 0, QApplication::UnicodeUTF8));
-        Buttonsign->setText(QApplication::translate("Onglet", "\302\261", 0, QApplication::UnicodeUTF8));
-        Buttonplus->setText(QApplication::translate("Onglet", "+", 0, QApplication::UnicodeUTF8));
-        Buttonmoins->setText(QApplication::translate("Onglet", "-", 0, QApplication::UnicodeUTF8));
-        Buttonfois->setText(QApplication::translate("Onglet", "*", 0, QApplication::UnicodeUTF8));
-        Buttondiviser->setText(QApplication::translate("Onglet", "/", 0, QApplication::UnicodeUTF8));
-        Buttoneval->setText(QApplication::translate("Onglet", "EVAL", 0, QApplication::UnicodeUTF8));
-        Buttoninv->setText(QApplication::translate("Onglet", "INV", 0, QApplication::UnicodeUTF8));
-        Buttonsqrt->setText(QApplication::translate("Onglet", "\342\210\232", 0, QApplication::UnicodeUTF8));
-        Buttonegale->setText(QApplication::translate("Onglet", "=", 0, QApplication::UnicodeUTF8));
-        Buttondup->setText(QApplication::translate("Onglet", "DUP", 0, QApplication::UnicodeUTF8));
-        Buttondrop->setText(QApplication::translate("Onglet", "DROP", 0, QApplication::UnicodeUTF8));
-        Buttonclear->setText(QApplication::translate("Onglet", "CLEAR", 0, QApplication::UnicodeUTF8));
-        Buttonlog->setText(QApplication::translate("Onglet", "LOG", 0, QApplication::UnicodeUTF8));
-        Buttonfact->setText(QApplication::translate("Onglet", "!", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("Onglet", "PGMCalculator v0.1", 0, QApplication::UnicodeUTF8));
-        radioButtonradian->setText(QApplication::translate("Onglet", "Radian", 0, QApplication::UnicodeUTF8));
-        radioButtondegree->setText(QApplication::translate("Onglet", "Degr\303\251", 0, QApplication::UnicodeUTF8));
-        groupBox_2->setTitle(QApplication::translate("Onglet", "Type des constantes", 0, QApplication::UnicodeUTF8));
-        _modEntiers->setText(QApplication::translate("Onglet", "Enti\303\250res", 0, QApplication::UnicodeUTF8));
-        _modRationnels->setText(QApplication::translate("Onglet", "Rationnelles", 0, QApplication::UnicodeUTF8));
-        _modReels->setText(QApplication::translate("Onglet", "R\303\251elles", 0, QApplication::UnicodeUTF8));
-        groupBox_3->setTitle(QApplication::translate("Onglet", "Affichage claviers", 0, QApplication::UnicodeUTF8));
-        _clavierBasic->setText(QApplication::translate("Onglet", "&Basic", 0, QApplication::UnicodeUTF8));
-        _clavierAvance->setText(QApplication::translate("Onglet", "&Avanc\303\251", 0, QApplication::UnicodeUTF8));
-        groupBox_4->setTitle(QApplication::translate("Onglet", "Mode complexe", 0, QApplication::UnicodeUTF8));
-        _modComplexeON->setText(QApplication::translate("Onglet", "Activ\303\251s", 0, QApplication::UnicodeUTF8));
-        _modComplexeOFF->setText(QApplication::translate("Onglet", "D\303\251sactiv\303\251s", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("Onglet", "Pile", 0, QApplication::UnicodeUTF8));
+        Widget->setWindowTitle(QApplication::translate("Widget", "Onglet", 0, QApplication::UnicodeUTF8));
+        Button7->setText(QApplication::translate("Widget", "7", 0, QApplication::UnicodeUTF8));
+        Button8->setText(QApplication::translate("Widget", "8", 0, QApplication::UnicodeUTF8));
+        Button9->setText(QApplication::translate("Widget", "9", 0, QApplication::UnicodeUTF8));
+        Button4->setText(QApplication::translate("Widget", "4", 0, QApplication::UnicodeUTF8));
+        Button5->setText(QApplication::translate("Widget", "5", 0, QApplication::UnicodeUTF8));
+        Button6->setText(QApplication::translate("Widget", "6", 0, QApplication::UnicodeUTF8));
+        Button1->setText(QApplication::translate("Widget", "1", 0, QApplication::UnicodeUTF8));
+        Button2->setText(QApplication::translate("Widget", "2", 0, QApplication::UnicodeUTF8));
+        Button3->setText(QApplication::translate("Widget", "3", 0, QApplication::UnicodeUTF8));
+        Button0->setText(QApplication::translate("Widget", "0", 0, QApplication::UnicodeUTF8));
+        Buttonvirgule->setText(QApplication::translate("Widget", ",", 0, QApplication::UnicodeUTF8));
+        Buttonswap->setText(QApplication::translate("Widget", "SWAP", 0, QApplication::UnicodeUTF8));
+        Buttonmean->setText(QApplication::translate("Widget", "MEAN", 0, QApplication::UnicodeUTF8));
+        Buttonln->setText(QApplication::translate("Widget", "LN", 0, QApplication::UnicodeUTF8));
+        Buttonsinh->setText(QApplication::translate("Widget", "SINH", 0, QApplication::UnicodeUTF8));
+        Buttonsin->setText(QApplication::translate("Widget", "SIN", 0, QApplication::UnicodeUTF8));
+        Buttoncosh->setText(QApplication::translate("Widget", "COSH", 0, QApplication::UnicodeUTF8));
+        Buttontanh->setText(QApplication::translate("Widget", "TANH", 0, QApplication::UnicodeUTF8));
+        Buttontan->setText(QApplication::translate("Widget", "TAN", 0, QApplication::UnicodeUTF8));
+        Buttoncos->setText(QApplication::translate("Widget", "COS", 0, QApplication::UnicodeUTF8));
+        Buttonmod->setText(QApplication::translate("Widget", "MOD", 0, QApplication::UnicodeUTF8));
+        Buttonxy->setText(QApplication::translate("Widget", "x^y", 0, QApplication::UnicodeUTF8));
+        Buttonx2->setText(QApplication::translate("Widget", "x^2", 0, QApplication::UnicodeUTF8));
+        Buttonx3->setText(QApplication::translate("Widget", "x^3", 0, QApplication::UnicodeUTF8));
+        Buttonsum->setText(QApplication::translate("Widget", "SUM", 0, QApplication::UnicodeUTF8));
+        Buttondollar->setText(QApplication::translate("Widget", "$", 0, QApplication::UnicodeUTF8));
+        Buttonsign->setText(QApplication::translate("Widget", "\302\261", 0, QApplication::UnicodeUTF8));
+        Buttonplus->setText(QApplication::translate("Widget", "+", 0, QApplication::UnicodeUTF8));
+        Buttonmoins->setText(QApplication::translate("Widget", "-", 0, QApplication::UnicodeUTF8));
+        Buttonfois->setText(QApplication::translate("Widget", "*", 0, QApplication::UnicodeUTF8));
+        Buttondiviser->setText(QApplication::translate("Widget", "/", 0, QApplication::UnicodeUTF8));
+        Buttoneval->setText(QApplication::translate("Widget", "EVAL", 0, QApplication::UnicodeUTF8));
+        Buttoninv->setText(QApplication::translate("Widget", "INV", 0, QApplication::UnicodeUTF8));
+        Buttonsqrt->setText(QApplication::translate("Widget", "\342\210\232", 0, QApplication::UnicodeUTF8));
+        Buttonegale->setText(QApplication::translate("Widget", "=", 0, QApplication::UnicodeUTF8));
+        Buttondup->setText(QApplication::translate("Widget", "DUP", 0, QApplication::UnicodeUTF8));
+        Buttondrop->setText(QApplication::translate("Widget", "DROP", 0, QApplication::UnicodeUTF8));
+        Buttonclear->setText(QApplication::translate("Widget", "CLEAR", 0, QApplication::UnicodeUTF8));
+        Buttonclear->setShortcut(QApplication::translate("Widget", "Ctrl+C", 0, QApplication::UnicodeUTF8));
+        Buttonlog->setText(QApplication::translate("Widget", "LOG", 0, QApplication::UnicodeUTF8));
+        Buttonfact->setText(QApplication::translate("Widget", "!", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("Widget", "PGMCalculator v0.1", 0, QApplication::UnicodeUTF8));
+        radioButtonradian->setText(QApplication::translate("Widget", "Radian", 0, QApplication::UnicodeUTF8));
+        radioButtondegree->setText(QApplication::translate("Widget", "Degr\303\251", 0, QApplication::UnicodeUTF8));
+        Buttonapo->setText(QApplication::translate("Widget", "'", 0, QApplication::UnicodeUTF8));
+        groupBox_2->setTitle(QApplication::translate("Widget", "Type des constantes", 0, QApplication::UnicodeUTF8));
+        _modEntiers->setText(QApplication::translate("Widget", "Enti\303\250res", 0, QApplication::UnicodeUTF8));
+        _modRationnels->setText(QApplication::translate("Widget", "Rationnelles", 0, QApplication::UnicodeUTF8));
+        _modReels->setText(QApplication::translate("Widget", "R\303\251elles", 0, QApplication::UnicodeUTF8));
+        groupBox_3->setTitle(QApplication::translate("Widget", "Affichage claviers", 0, QApplication::UnicodeUTF8));
+        _clavierBasic->setText(QApplication::translate("Widget", "&Basic", 0, QApplication::UnicodeUTF8));
+        _clavierAvance->setText(QApplication::translate("Widget", "&Avanc\303\251", 0, QApplication::UnicodeUTF8));
+        groupBox_4->setTitle(QApplication::translate("Widget", "Mode complexe", 0, QApplication::UnicodeUTF8));
+        _modComplexeON->setText(QApplication::translate("Widget", "Activ\303\251s", 0, QApplication::UnicodeUTF8));
+        _modComplexeOFF->setText(QApplication::translate("Widget", "D\303\251sactiv\303\251s", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("Widget", "Pile", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Onglet: public Ui_Onglet {};
+    class Widget: public Ui_Widget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -11,9 +11,18 @@ bool MoteurCalcul:: resoudre (){
 }
 
 void MoteurCalcul:: changerMode (const QString& mode){
+    if(mode == "C"){
 
+    } else {
+
+    }
 }
 
 void MoteurCalcul:: changerModeAngle (const QString& mode_angle){
+    if(mode_angle == "deg") {
 
+    }
+    if(mode_angle == "rad") {
+
+    }
 }

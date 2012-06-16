@@ -1,9 +1,9 @@
 //main.cpp
     #include <QApplication>
-    #include "widget.h"
+    #include "onglet.h"
     int main(int argc, char *argv[]){
         QApplication app(argc,argv);
-        MyWidget s;
-        s.show();
+        Onglet o;
+        o.show();
         return app.exec();
     }
