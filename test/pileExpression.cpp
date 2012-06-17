@@ -17,3 +17,7 @@ bool PileExpression::isNumber() const { return false; }
 void PileExpression::push(Expression& nouveau) { donnees.push(&nouveau); }
 void PileExpression::pop() { donnees.pop(); }
 Expression& PileExpression::top() { return *(donnees.top()); }
+void PileExpression::clear (){
+    for(int i = 0; i < donnees.size(); i++);
+
+}

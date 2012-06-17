@@ -1,9 +1,9 @@
 //main.cpp
     #include <QApplication>
-    #include "onglet.h"
+    #include "calculatrice.h"
     int main(int argc, char *argv[]){
         QApplication app(argc,argv);
-        Onglet o;
-        o.show();
+        Calculatrice& c=Calculatrice::GetInstance();
+        c.ouvrir();
         return app.exec();
     }

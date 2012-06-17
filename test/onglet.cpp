@@ -1,16 +1,17 @@
 #include "onglet.h"
 #include "ui_onglet.h"
+#include "calculatrice.h"
 using namespace Ui;
 
 
-Onglet::Onglet(){
+Onglet::Onglet(unsigned int num){
     tab = new QTabWidget(this);
     QWidget *w = new QWidget;
     ui.setupUi(w);
-    tab->addTab(w,QString("%1").arg(""));       //ajouter l'ui au tab
+    tab->addTab(w,"Onglet "+QString("%1").arg(num));       //ajouter l'ui au tab
     connects();
     opAll();
-    tab->resize(1000,450);
+    tab->resize(850,420);
 }
 
 Onglet::~Onglet(){
@@ -119,6 +120,26 @@ void Onglet::connects(){
     connect(ui.radioButtondegree,SIGNAL(toggled(bool)),this,SLOT(radian()));
     connect(ui.radioButtonradian,SIGNAL(toggled(bool)),this,SLOT(degre()));
     connect(ui.Buttondup,SIGNAL(clicked()),this,SLOT(dup()));
+    connect(ui.Buttondrop,SIGNAL(clicked()),this,SLOT(drop()));
+    connect(ui.Buttonclear,SIGNAL(clicked()),this,SLOT(clear()));
+    connect(ui.Buttonswap,SIGNAL(clicked()),this,SLOT(swap()));
+    connect(ui.Buttonmean,SIGNAL(clicked()),this,SLOT(mean()));
+    connect(ui.Buttonsum,SIGNAL(clicked()),this,SLOT(sum()));
+    connect(ui.Buttonlog,SIGNAL(clicked()),this,SLOT(log()));
+    connect(ui.Buttonln,SIGNAL(clicked()),this,SLOT(ln()));
+    connect(ui.Buttonxy,SIGNAL(clicked()),this,SLOT(xy()));
+    connect(ui.Buttonsinh,SIGNAL(clicked()),this,SLOT(sinh()));
+    connect(ui.Buttonsin,SIGNAL(clicked()),this,SLOT(sin()));
+    connect(ui.Buttonx2,SIGNAL(clicked()),this,SLOT(x2()));
+    connect(ui.Buttoncosh,SIGNAL(clicked()),this,SLOT(cosh()));
+    connect(ui.Buttoncos,SIGNAL(clicked()),this,SLOT(cos()));
+    connect(ui.Buttonx3,SIGNAL(clicked()),this,SLOT(x3()));
+    connect(ui.Buttontanh,SIGNAL(clicked()),this,SLOT(tanh()));
+    connect(ui.Buttontan,SIGNAL(clicked()),this,SLOT(tan()));
+    connect(ui.Buttonfact,SIGNAL(clicked()),this,SLOT(fact()));
+    connect(ui.Buttonapo,SIGNAL(clicked()),this,SLOT(apo()));
+    connect(ui.Buttondollar,SIGNAL(clicked()),this,SLOT(dollar()));
+    connect(ui.Buttonmod,SIGNAL(clicked()),this,SLOT(mod()));
     connect(ui.Button0,SIGNAL(clicked()),this,SLOT(num0()));
     connect(ui.Button1,SIGNAL(clicked()),this,SLOT(num1()));
     connect(ui.Button2,SIGNAL(clicked()),this,SLOT(num2()));
@@ -129,8 +150,16 @@ void Onglet::connects(){
     connect(ui.Button7,SIGNAL(clicked()),this,SLOT(num7()));
     connect(ui.Button8,SIGNAL(clicked()),this,SLOT(num8()));
     connect(ui.Button9,SIGNAL(clicked()),this,SLOT(num9()));
+    connect(ui.Buttonvirgule,SIGNAL(clicked()),this,SLOT(virgule()));
+    connect(ui.Buttonplus,SIGNAL(clicked()),this,SLOT(plus()));
+    connect(ui.Buttonmoins,SIGNAL(clicked()),this,SLOT(moins()));
+    connect(ui.Buttonfois,SIGNAL(clicked()),this,SLOT(fois()));
+    connect(ui.Buttondiviser,SIGNAL(clicked()),this,SLOT(diviser()));
+    connect(ui.Buttoneval,SIGNAL(clicked()),this,SLOT(eval()));
+    connect(ui.Buttonsqrt,SIGNAL(clicked()),this,SLOT(sqrt()));
+    connect(ui.Buttonsign,SIGNAL(clicked()),this,SLOT(signe()));
+    connect(ui.Buttoninv,SIGNAL(clicked()),this,SLOT(inv()));
     connect(ui.Buttonegale,SIGNAL(clicked()),this,SLOT(enter()));
-
 }
 
 void Onglet::complexeActive(){
@@ -175,162 +204,201 @@ void Onglet::degre(){
 }
 
 void Onglet::dup(){
+    Calculatrice:: GetInstance().newOnglet();
 }
 
 void Onglet::drop(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+
 }
 
 void Onglet::clear(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.clear();
 }
 
 void Onglet::swap(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+
 }
 
 void Onglet::log(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("LOGD"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"log");
 }
 
 void Onglet::sinh(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SINH"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sinh(0)");
 }
 
 void Onglet::cosh(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("COSH"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"cosh(0)");
 }
 
 void Onglet::tanh(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("TANH"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"tanh(0)");
 }
 
 void Onglet::mean(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("MEAN"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"mean(0)");
 }
 
 void Onglet::ln(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("LN"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"ln(0)");
 }
 
 void Onglet::sin(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SIN"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sin(0)");
 }
 
 void Onglet::cos(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("COS"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"cos(0)");
 }
 
 void Onglet::tan(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("TAN"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"tan(0)");
 }
 
 void Onglet::sum(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SUM"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sum");
 }
 
 void Onglet::xy(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("POW"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^");
 }
 
 void Onglet::x2(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SQR"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^2");
 }
 
 void Onglet::x3(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("CUBE"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^3");
 }
 
 void Onglet::fact(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("FACT"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"!");
 }
 
 void Onglet::dollar(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("$"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"$");
 }
 
 void Onglet::mod(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("MOD"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"MOD");
 }
 
 
 void Onglet::num0(){
+    pile_affichage.push(Entier("0"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"0");
 }
 
 void Onglet::num1(){
+    pile_affichage.push(Entier("1"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"1");
 }
 
 void Onglet::num2(){
+    pile_affichage.push(Entier("2"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"2");
 }
 
 void Onglet::num3(){
+    pile_affichage.push(Entier("3"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"3");
 }
 
 void Onglet::num4(){
+    pile_affichage.push(Entier("4"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"4");
 }
 
 void Onglet::num5(){
+    pile_affichage.push(Entier("5"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"5");
 }
 
 void Onglet::num6(){
+    pile_affichage.push(Entier("6"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"6");
 }
 
 void Onglet::num7(){
+    pile_affichage.push(Entier("7"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"7");
 }
 
 void Onglet::num8(){
+    pile_affichage.push(Entier("8"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"8");
 }
 
 void Onglet::num9(){
+    pile_affichage.push(Entier("9"));
     ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
 }
 
+void Onglet::apo(){
+    //pile_affichage.push("'");
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"'");
+}
 
 void Onglet::virgule(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    //pile_affichage.push(",");
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+",");
 }
 
 void Onglet::plus(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("+"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"+");
 }
 
 void Onglet::moins(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("-"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"-");
 }
 
 void Onglet::fois(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("*"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"*");
 }
 
 void Onglet::diviser(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("/"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"/");
 }
 
 void Onglet::eval(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("EVAL"));
 }
 
 void Onglet::sqrt(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SQRT"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sqrt(0)");
 }
 
 void Onglet::signe(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("SIGN"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"negate(0)");
 }
 
 void Onglet::inv(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("INV"));
+    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"inv");
 }
 
 void Onglet::enter(){
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    pile_affichage.push(Operation("="));
 }

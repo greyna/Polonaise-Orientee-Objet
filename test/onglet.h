@@ -13,9 +13,8 @@ class Onglet:public QWidget{
     Q_OBJECT
 
 public:
-    Onglet();
+    Onglet(unsigned int num);
     ~Onglet();
-
 private:
     QTabWidget *tab;
     Ui_Widget ui;
@@ -56,6 +55,7 @@ public slots:
     void xy();
     void x2();
     void x3();
+    void apo();
     void fact();
     void dollar();
     void mod();

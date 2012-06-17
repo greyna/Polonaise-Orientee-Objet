@@ -15,7 +15,10 @@ SOURCES += main.cpp\
     pileExpression.cpp \
     expression.cpp \
     onglet.cpp \
-    backup.cpp
+    backup.cpp \
+    calculatrice.cpp \
+    operation.cpp \
+    nombre.cpp
 
 HEADERS  += \
     moteurCalcul.h \
@@ -26,7 +29,8 @@ HEADERS  += \
     factory.h \
     expression.h \
     cst.h \
-    onglet.h
+    onglet.h \
+    calculatrice.h
 
 FORMS    += widget.ui \
     widget.ui \
