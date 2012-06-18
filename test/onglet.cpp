@@ -159,7 +159,7 @@ void Onglet::connects(){
     connect(ui.Buttonsqrt,SIGNAL(clicked()),this,SLOT(sqrt()));
     connect(ui.Buttonsign,SIGNAL(clicked()),this,SLOT(signe()));
     connect(ui.Buttoninv,SIGNAL(clicked()),this,SLOT(inv()));
-    connect(ui.Buttonegale,SIGNAL(clicked()),this,SLOT(enter()));
+    connect(ui.Buttonegale,SIGNAL(clicked()),this,SLOT(egale()));
 }
 
 void Onglet::complexeActive(){
@@ -196,11 +196,11 @@ void Onglet::clavierAvance(){
 }
 
 void Onglet::radian(){
-    moteur.changerModeAngle("rad");
+    moteur.changerAngle("rad");
 }
 
 void Onglet::degre(){
-    moteur.changerModeAngle("deg");
+    moteur.changerAngle("deg");
 }
 
 void Onglet::dup(){
@@ -220,185 +220,153 @@ void Onglet::swap(){
 }
 
 void Onglet::log(){
-    pile_affichage.push(Operation("LOGD"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"log");
+    ui.lineEdit->setText(ui.lineEdit->text()+"log");
 }
 
 void Onglet::sinh(){
-    pile_affichage.push(Operation("SINH"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sinh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"sinh(0)");
 }
 
 void Onglet::cosh(){
-    pile_affichage.push(Operation("COSH"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"cosh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"cosh(0)");
 }
 
 void Onglet::tanh(){
-    pile_affichage.push(Operation("TANH"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"tanh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"tanh(0)");
 }
 
 void Onglet::mean(){
-    pile_affichage.push(Operation("MEAN"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"mean(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"mean(0)");
 }
 
 void Onglet::ln(){
-    pile_affichage.push(Operation("LN"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"ln(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"ln(0)");
 }
 
 void Onglet::sin(){
-    pile_affichage.push(Operation("SIN"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sin(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"sin(0)");
 }
 
 void Onglet::cos(){
-    pile_affichage.push(Operation("COS"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"cos(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"cos(0)");
 }
 
 void Onglet::tan(){
-    pile_affichage.push(Operation("TAN"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"tan(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"tan(0)");
 }
 
 void Onglet::sum(){
-    pile_affichage.push(Operation("SUM"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sum");
+    ui.lineEdit->setText(ui.lineEdit->text()+"sum");
 }
 
 void Onglet::xy(){
-    pile_affichage.push(Operation("POW"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^");
+    ui.lineEdit->setText(ui.lineEdit->text()+"^");
 }
 
 void Onglet::x2(){
-    pile_affichage.push(Operation("SQR"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^2");
+    ui.lineEdit->setText(ui.lineEdit->text()+"^2");
 }
 
 void Onglet::x3(){
-    pile_affichage.push(Operation("CUBE"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"^3");
+    ui.lineEdit->setText(ui.lineEdit->text()+"^3");
 }
 
 void Onglet::fact(){
-    pile_affichage.push(Operation("FACT"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"!");
+    ui.lineEdit->setText(ui.lineEdit->text()+"!");
 }
 
 void Onglet::dollar(){
-    pile_affichage.push(Operation("$"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"$");
+    ui.lineEdit->setText(ui.lineEdit->text()+"$");
 }
 
 void Onglet::mod(){
-    pile_affichage.push(Operation("MOD"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"MOD");
+    ui.lineEdit->setText(ui.lineEdit->text()+"MOD");
 }
 
 
 void Onglet::num0(){
-    pile_affichage.push(Entier("0"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"0");
+    ui.lineEdit->setText(ui.lineEdit->text()+"0");
 }
 
 void Onglet::num1(){
-    pile_affichage.push(Entier("1"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"1");
+    ui.lineEdit->setText(ui.lineEdit->text()+"1");
 }
 
 void Onglet::num2(){
-    pile_affichage.push(Entier("2"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"2");
+    ui.lineEdit->setText(ui.lineEdit->text()+"2");
 }
 
 void Onglet::num3(){
-    pile_affichage.push(Entier("3"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"3");
+    ui.lineEdit->setText(ui.lineEdit->text()+"3");
 }
 
 void Onglet::num4(){
-    pile_affichage.push(Entier("4"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"4");
+    ui.lineEdit->setText(ui.lineEdit->text()+"4");
 }
 
 void Onglet::num5(){
-    pile_affichage.push(Entier("5"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"5");
+    ui.lineEdit->setText(ui.lineEdit->text()+"5");
 }
 
 void Onglet::num6(){
-    pile_affichage.push(Entier("6"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"6");
+    ui.lineEdit->setText(ui.lineEdit->text()+"6");
 }
 
 void Onglet::num7(){
-    pile_affichage.push(Entier("7"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"7");
+    ui.lineEdit->setText(ui.lineEdit->text()+"7");
 }
 
 void Onglet::num8(){
-    pile_affichage.push(Entier("8"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"8");
+    ui.lineEdit->setText(ui.lineEdit->text()+"8");
 }
 
 void Onglet::num9(){
-    pile_affichage.push(Entier("9"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"9");
+    ui.lineEdit->setText(ui.lineEdit->text()+"9");
 }
 
 void Onglet::apo(){
-    //pile_affichage.push("'");
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"'");
+    ui.lineEdit->setText(ui.lineEdit->text()+"'");
 }
 
 void Onglet::virgule(){
-    //pile_affichage.push(",");
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+",");
+    ui.lineEdit->setText(ui.lineEdit->text()+",");
 }
 
 void Onglet::plus(){
-    pile_affichage.push(Operation("+"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"+");
+    ui.lineEdit->setText(ui.lineEdit->text()+"+");
 }
 
 void Onglet::moins(){
-    pile_affichage.push(Operation("-"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"-");
+    ui.lineEdit->setText(ui.lineEdit->text()+"-");
 }
 
 void Onglet::fois(){
-    pile_affichage.push(Operation("*"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"*");
+    ui.lineEdit->setText(ui.lineEdit->text()+"*");
 }
 
 void Onglet::diviser(){
-    pile_affichage.push(Operation("/"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"/");
+    ui.lineEdit->setText(ui.lineEdit->text()+"/");
 }
 
 void Onglet::eval(){
-    pile_affichage.push(Operation("EVAL"));
 }
 
 void Onglet::sqrt(){
-    pile_affichage.push(Operation("SQRT"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"sqrt(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"sqrt(0)");
 }
 
 void Onglet::signe(){
-    pile_affichage.push(Operation("SIGN"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"negate(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+"negate(0)");
 }
 
 void Onglet::inv(){
-    pile_affichage.push(Operation("INV"));
-    ui.piledisplay->setPlainText(ui.piledisplay->toPlainText()+"inv");
+    ui.lineEdit->setText(ui.lineEdit->text()+"inv");
+}
+
+void Onglet::egale(){
+
 }
 
 void Onglet::enter(){
-    pile_affichage.push(Operation("="));
+    pile_affichage.push(ui.lineEdit->text());
 }

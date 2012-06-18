@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QtGui>
 #include "ui_onglet.h"
-#include "pileExpression.h"
 #include "moteurCalcul.h"
 using namespace Ui;
 using namespace calcul;
@@ -19,7 +18,7 @@ private:
     QTabWidget *tab;
     Ui_Widget ui;
     MoteurCalcul moteur;
-    PileExpression pile_affichage;
+    QStack<QString> pile_affichage;
     void connects();
     void opAll();
     void opNonReels();
@@ -78,6 +77,7 @@ public slots:
     void sqrt();
     void signe();
     void inv();
+    void egale();
     void enter();
 };
 #endif

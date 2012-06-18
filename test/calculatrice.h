@@ -13,6 +13,7 @@ class Calculatrice{
         Calculatrice(unsigned int n=10): nb_onglets(0), nb_max(n), liste(new Onglet* [n]){}
         ~Calculatrice();
         Onglet ** liste;	//liste des onglets
+        //QTabWidget *tab;
         unsigned int nb_onglets;
         unsigned int nb_max;
         static Calculatrice* instance;

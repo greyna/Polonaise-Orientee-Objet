@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <QString>
-#include "operation.h"
+#include "pileCst.h"
 
 using namespace std;
 
@@ -10,16 +10,12 @@ namespace calcul {
 
 class MoteurCalcul {
 private:
-	enum Mode mode;
-	enum ModeAngle mode_angle;
-	PileExpression pile_stockage;
-	stack<Operation> pile_operation;
+    PileCst pile_stockage;
 	
 public:
-    void ajout (const QString& ajout);
-	bool resoudre ();
-    void changerMode (const QString& mode = "C");
-    void changerModeAngle (const QString& mode_angle = "deg");
+    void ajouterResoudre (QString ajout);
+    void changerMode (QString mode_type = "C");
+    void changerAngle (QString mode_angle = "degre");
 };
 
 }

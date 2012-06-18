@@ -1,26 +1,42 @@
 #pragma once
 
-#include <iostream>
 #include <QString>
+#include "factory.h"
 
 using namespace std;
 
 namespace calcul {
 
-enum Mode {Z, Q, R, CZ, CR, C}; // CZ : complexe entier | CR : rationnel complexe
-enum ModeAngle {deg, rad};
-enum TypeOp {unaire, binaire, pile, eval};
-
-class Expression
-{
+class Expression : public Cst {
 protected:
-    QString string_associe;
-	virtual void set_string_associe() = 0;
+    void setString() { }
+
 public:
-    Expression(const QString & string_associe);
-	Expression();
-    QString get_string_associe() const;
-    virtual bool isNumber() const = 0;
+    Expression(QString str) { string_associe = "'"+str+"'"; }
+    bool isNumber() const { return false; }
+
+    Expression& operator +(const Cst& other)const;
+    Expression& operator *(const Cst& other)const;
+    Expression& operator -(const Cst& other)const;
+    Expression& operator /(const Cst& other)const;
+    Expression& POW (const Cst& other)const;
+    Expression& MOD(const Cst& other) const;
+
+    Expression& SQR ()const;
+    Expression& CUBE ()const;
+    Expression& SIGN ()const;
+    Expression& SIN (AngleType angle = Degre)const;
+    Expression& COS (AngleType angle = Degre)const;
+    Expression& TAN (AngleType angle = Degre)const;
+    Expression& SINH ()const;
+    Expression& COSH ()const;
+    Expression& TANH ()const;
+    Expression& LN ()const;
+    Expression& LOG ()const;
+    Expression& SQRT ()const;
+    Expression& INV ()const;
+    Expression& FACT()const;
+    Expression& EVAL()const;
 };
 
 }
