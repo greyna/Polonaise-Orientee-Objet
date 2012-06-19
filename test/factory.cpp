@@ -10,7 +10,7 @@ using namespace calcul;
 
 Complexe<Reel>& FactoryComplexe::CreerReel(QString str) {
     if ( str != QString("") && !QRegExp( "^(\\-?\\d+(\\.\\d+)?)?(\\$\\-?\\d+(\\.\\d+)?)?$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     double re=0, img=0;
 
@@ -29,7 +29,7 @@ Complexe<Reel>& FactoryComplexe::CreerReel(QString str) {
 
 Complexe<Rationnel>& FactoryComplexe::CreerRationnel(QString str) {
     if ( str == QString("") || !QRegExp( "^(\\-?\\d+(/\\d+)?)?(\\$\\-?\\d+(/\\d+)?)?$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     int num=0, den=1, num_img=0, den_img=1;
 
@@ -69,7 +69,7 @@ Complexe<Rationnel>& FactoryComplexe::CreerRationnel(QString str) {
     }
 
     if (den==0||den_img==0) {
-        throw FactoryException("dénominateur à 0");
+        throw FactoryException("denominateur a 0");
     }
     Rationnel _re(num,den);
     Rationnel _img(num_img,den_img);
@@ -78,7 +78,7 @@ Complexe<Rationnel>& FactoryComplexe::CreerRationnel(QString str) {
 
 Complexe<Entier>& FactoryComplexe::CreerEntier(QString str) {
     if ( str == QString("") || !QRegExp( "^(\\-?\\d+)?(\\$\\-?\\d+)?$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     int re=0, img=0;
 
@@ -104,13 +104,13 @@ Complexe<Entier>& FactoryComplexe::CreerEntier(QString str) {
 // --------------------------------------------------------------------
 Reel& FactoryNormal::CreerReel(QString str) {
     if ( !QRegExp( "^\\-?\\d+(\\.\\d+)?$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     double valeur=0;
 
     int index = str.indexOf(" ");
     if (index>=0)
-        //throw FactoryException("string mal formaté");
+        //throw FactoryException("string mal formate");
         str = str.left(index);
 
     valeur = str.toDouble();
@@ -120,7 +120,7 @@ Reel& FactoryNormal::CreerReel(QString str) {
 
 Rationnel& FactoryNormal::CreerRationnel(QString str) {
     if (!QRegExp( "^\\-?\\d+(/\\d+)?$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     int num=0, den=1;
 
@@ -137,14 +137,14 @@ Rationnel& FactoryNormal::CreerRationnel(QString str) {
         num = str.toInt();
 
     if (den==0)
-        throw FactoryException("erreur : dénominateur à 0");
+        throw FactoryException("erreur : denominateur a 0");
 
     return *(new Rationnel(num,den));
 }
 
 Entier& FactoryNormal::CreerEntier(QString str) {
     if (!QRegExp( "^\\-?\\d+$" ).exactMatch(str) )
-        throw FactoryException(str + QString(" n'est pas valide à la création!"));
+        throw FactoryException(str + QString(" n'est pas valide a la creation!"));
 
     int valeur=0;
 

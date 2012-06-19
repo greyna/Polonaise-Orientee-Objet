@@ -3,19 +3,101 @@
 #include "calculatrice.h"
 using namespace Ui;
 
-
-Onglet::Onglet(unsigned int num){
-    tab = new QTabWidget(this);
+Onglet::Onglet(unsigned int num, QTabWidget *tab, unsigned int init) : numOnglet(num){
+    if(init == 0) {
+       tab->setParent(this);
+    }
+    this->numOnglet = num;
     QWidget *w = new QWidget;
     ui.setupUi(w);
     tab->addTab(w,"Onglet "+QString("%1").arg(num));       //ajouter l'ui au tab
+    //connecter les slots et les signaux
     connects();
-    opAll();
+    mode();
     tab->resize(850,420);
+}
+
+Onglet::Onglet(unsigned int num, QTabWidget *tab, Onglet* o) {
+    this->numOnglet = num;
+    QWidget *w = new QWidget;
+    ui.setupUi(w);
+    tab->addTab(w,"Onglet "+QString("%1").arg(num));       //ajouter l'ui au tab
+    //connecter les slots et les signaux
+    connects();
+    mode();
+    tab->resize(850,420);
+    this->moteur( new MoteurCalcul(o->getMot()));
 }
 
 Onglet::~Onglet(){
 
+}
+void Onglet::saveContext(){
+    //histo.enregistre(modeCalcul, pile_affichage);
+}
+
+void Onglet::loadContext(){
+    //histo.recuperer();
+}
+
+void Onglet::closeEvent(QCloseEvent *event){
+    switch( QMessageBox::information(this, QObject::tr("Quit?"),QObject::tr("Do you really want to quit?"),QObject::tr("Yes"), QObject::tr("No"),0, 1 ) )
+     {
+        case 0:
+            saveContext();
+            event->accept();
+            break;
+        case 1:
+     default:
+            event->ignore();
+            break;
+     }
+ }
+
+void Onglet::mode(){
+    opAll();
+    //Mode complexe
+    if(ui._modComplexeON->isChecked()){
+        opNonComplexes();
+        if(ui._modEntiers->isChecked()){
+            moteur.changerMode("CZ");
+            ui.PileCalcul->setPlainText("");
+            opNonEntiers();
+            modeCalcul="CZ";
+        }
+        if(ui._modRationnels->isChecked()){
+            moteur.changerMode("CQ");
+            ui.PileCalcul->setPlainText("");
+            opNonRationels();
+            modeCalcul="CQ";
+        }
+        if(ui._modReels->isChecked()){
+            moteur.changerMode("C");
+            ui.PileCalcul->setPlainText("");
+            opNonReels();
+            modeCalcul="C";
+        }
+    } else {
+        ui.Buttondollar->setEnabled(false);
+        if(ui._modEntiers->isChecked()){
+            moteur.changerMode("Z");
+            ui.PileCalcul->setPlainText("");
+            opNonEntiers();
+            modeCalcul="Z";
+        }
+        if(ui._modRationnels->isChecked()){
+            moteur.changerMode("Q");
+            ui.PileCalcul->setPlainText("");
+            opNonRationels();
+            modeCalcul="Q";
+        }
+        if(ui._modReels->isChecked()){
+            moteur.changerMode("R");
+            ui.PileCalcul->setPlainText("");
+            opNonReels();
+            modeCalcul="R";
+        }
+    }
 }
 
 void Onglet::opAll(){
@@ -32,18 +114,21 @@ void Onglet::opAll(){
     ui.Buttoninv->setEnabled(true);
     ui.Buttonsqrt->setEnabled(true);
     ui.Buttonfact->setEnabled(true);
-    ui.Buttondollar->setEnabled(false);
+    ui.Buttondollar->setEnabled(true);
 }
 
+//Deactiver les boutons dont la fonction n'est pas accessible aux reels
 void Onglet::opNonReels(){
      ui.Buttonmod->setEnabled(false);
      ui.Buttonfact->setEnabled(false);
 }
 
+//Deactiver les boutons dont la fonction n'est pas accessible aux entiers
 void Onglet::opNonEntiers(){
 
 }
 
+//Deactiver les boutons dont la fonction n'est pas accessible aux complexes
 void Onglet::opNonComplexes(){
      ui.Buttonxy->setEnabled(false);
      ui.Buttonmod->setEnabled(false);
@@ -60,6 +145,7 @@ void Onglet::opNonComplexes(){
      ui.Buttonfact->setEnabled(false);
 }
 
+//Deactiver les boutons dont la fonction n'est pas accessible aux ractionels
 void Onglet::opNonRationels(){
     ui.Buttonmod->setEnabled(false);
     ui.Buttonfact->setEnabled(false);
@@ -77,7 +163,7 @@ void Onglet::clavierBasicVisible(bool visible){
     ui.Buttonsqrt->setVisible(visible);
     ui.Buttonsign->setVisible(visible);
     ui.Buttoninv->setVisible(visible);
-    ui.Buttonegale->setVisible(visible);
+    ui.Buttonenter->setVisible(visible);
     ui.Buttonvirgule->setVisible(visible);
     ui.Button0->setVisible(visible);
     ui.Button1->setVisible(visible);
@@ -110,11 +196,11 @@ void Onglet::clavierAvanceVisible(bool visible){
 }
 
 void Onglet::connects(){
-    connect(ui._modComplexeON,SIGNAL(toggled(bool)),this,SLOT(complexeActive()));
-    connect(ui._modComplexeOFF,SIGNAL(toggled(bool)),this,SLOT(complexeDesactive()));
-    connect(ui._modReels,SIGNAL(toggled(bool)),this,SLOT(constReel()));
-    connect(ui._modRationnels,SIGNAL(toggled(bool)),this,SLOT(constRationel()));
-    connect(ui._modEntiers,SIGNAL(toggled(bool)),this,SLOT(constEntier()));
+    connect(ui._modComplexeON,SIGNAL(toggled(bool)),this,SLOT(mode()));
+    connect(ui._modComplexeOFF,SIGNAL(toggled(bool)),this,SLOT(mode()));
+    connect(ui._modReels,SIGNAL(toggled(bool)),this,SLOT(mode()));
+    connect(ui._modRationnels,SIGNAL(toggled(bool)),this,SLOT(mode()));
+    connect(ui._modEntiers,SIGNAL(toggled(bool)),this,SLOT(mode()));
     connect(ui._clavierBasic,SIGNAL(stateChanged(int)),this,SLOT(clavierBasic()));
     connect(ui._clavierAvance,SIGNAL(stateChanged(int)),this,SLOT(clavierAvance()));
     connect(ui.radioButtondegree,SIGNAL(toggled(bool)),this,SLOT(radian()));
@@ -159,32 +245,30 @@ void Onglet::connects(){
     connect(ui.Buttonsqrt,SIGNAL(clicked()),this,SLOT(sqrt()));
     connect(ui.Buttonsign,SIGNAL(clicked()),this,SLOT(signe()));
     connect(ui.Buttoninv,SIGNAL(clicked()),this,SLOT(inv()));
-    connect(ui.Buttonegale,SIGNAL(clicked()),this,SLOT(egale()));
+    connect(ui.Buttonenter,SIGNAL(clicked()),this,SLOT(enter()));
+    connect(ui.Buttonspace,SIGNAL(clicked()),this,SLOT(space()));
+    connect(ui.Buttonannuler,SIGNAL(clicked()),this,SLOT(annuler()));
+    connect(ui.Buttonretablir,SIGNAL(clicked()),this,SLOT(retablir()));
+    QShortcut *nouvelOnglet= new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_N), this);
+    connect(nouvelOnglet, SIGNAL(activated()), this,SLOT(newOnglet()));
+    QShortcut *deleteOnglet= new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_W), this);
+    connect(deleteOnglet, SIGNAL(activated()), this,SLOT(deleteOnglet()));
+    QShortcut *dupOnglet= new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_T), this);
+    connect(dupOnglet, SIGNAL(activated()), this,SLOT(dupOnglet()));
 }
 
-void Onglet::complexeActive(){
-    opAll();
-    opNonComplexes();
-    ui.Buttondollar->setEnabled(true);
+void Onglet::dupOnglet() {
+    Calculatrice::GetInstance().duplicate(this);
 }
 
-void Onglet::complexeDesactive(){
-    opAll();
+void Onglet::newOnglet(){
+    Calculatrice::GetInstance().newOnglet();
 }
 
-void Onglet::constReel(){
-    opAll();
-    opNonReels();
-}
-
-void Onglet::constRationel(){
-    opAll();
-    opNonRationels();
-}
-
-void Onglet::constEntier(){
-    opAll();
-    opNonEntiers();
+void Onglet::deleteOnglet(){
+    Calculatrice::GetInstance().getTab()->removeTab(numOnglet);
+    //Calculatrice::GetInstance().deleteOnglet(numOnglet);
+    //cout<<numOnglet;
 }
 
 void Onglet::clavierBasic(){
@@ -204,75 +288,79 @@ void Onglet::degre(){
 }
 
 void Onglet::dup(){
-    Calculatrice:: GetInstance().newOnglet();
+    ui.lineEdit->setText(ui.lineEdit->text()+" DUP ");
 }
 
 void Onglet::drop(){
-
+    ui.lineEdit->setText(ui.lineEdit->text()+" DROP ");
 }
 
 void Onglet::clear(){
-    pile_affichage.clear();
+    ui.lineEdit->setText(ui.lineEdit->text()+" CLEAR ");
+}
+
+void Onglet::space(){
+    ui.lineEdit->setText(ui.lineEdit->text()+" ");
 }
 
 void Onglet::swap(){
-
+    ui.lineEdit->setText(ui.lineEdit->text()+" SWAP ");
 }
 
 void Onglet::log(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"log");
+    ui.lineEdit->setText(ui.lineEdit->text()+" LOG ");
 }
 
 void Onglet::sinh(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"sinh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SINH ");
 }
 
 void Onglet::cosh(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"cosh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" COSH ");
 }
 
 void Onglet::tanh(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"tanh(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" TANH ");
 }
 
 void Onglet::mean(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"mean(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" MEAN ");
 }
 
 void Onglet::ln(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"ln(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" LN ");
 }
 
 void Onglet::sin(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"sin(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SIN ");
 }
 
 void Onglet::cos(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"cos(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" COS ");
 }
 
 void Onglet::tan(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"tan(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" TAN ");
 }
 
 void Onglet::sum(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"sum");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SUM ");
 }
 
 void Onglet::xy(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"^");
+    ui.lineEdit->setText(ui.lineEdit->text()+" POW ");
 }
 
 void Onglet::x2(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"^2");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SQR ");
 }
 
 void Onglet::x3(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"^3");
+    ui.lineEdit->setText(ui.lineEdit->text()+" CUBE ");
 }
 
 void Onglet::fact(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"!");
+    ui.lineEdit->setText(ui.lineEdit->text()+" FACT ");
 }
 
 void Onglet::dollar(){
@@ -280,7 +368,7 @@ void Onglet::dollar(){
 }
 
 void Onglet::mod(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"MOD");
+    ui.lineEdit->setText(ui.lineEdit->text()+" MOD ");
 }
 
 
@@ -325,48 +413,72 @@ void Onglet::num9(){
 }
 
 void Onglet::apo(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"'");
+    ui.lineEdit->setText(ui.lineEdit->text()+" ' ");
 }
 
 void Onglet::virgule(){
-    ui.lineEdit->setText(ui.lineEdit->text()+",");
+    ui.lineEdit->setText(ui.lineEdit->text()+" . ");
 }
 
 void Onglet::plus(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"+");
+    ui.lineEdit->setText(ui.lineEdit->text()+" + ");
 }
 
 void Onglet::moins(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"-");
+    ui.lineEdit->setText(ui.lineEdit->text()+" - ");
 }
 
 void Onglet::fois(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"*");
+    ui.lineEdit->setText(ui.lineEdit->text()+" * ");
 }
 
 void Onglet::diviser(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"/");
+    ui.lineEdit->setText(ui.lineEdit->text()+" / ");
 }
 
 void Onglet::eval(){
+    ui.lineEdit->setText(ui.lineEdit->text()+" EVAL ");
 }
 
 void Onglet::sqrt(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"sqrt(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SQRT ");
 }
 
 void Onglet::signe(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"negate(0)");
+    ui.lineEdit->setText(ui.lineEdit->text()+" SIGN ");
 }
 
 void Onglet::inv(){
-    ui.lineEdit->setText(ui.lineEdit->text()+"inv");
-}
-
-void Onglet::egale(){
-
+    ui.lineEdit->setText(ui.lineEdit->text()+" INV ");
 }
 
 void Onglet::enter(){
     pile_affichage.push(ui.lineEdit->text());
+
+    moteur.ajouterResoudre(ui.lineEdit->text());
+
+    QString resultat;
+    for(int i = 0; i < moteur.getPile().getPile().size(); i++){
+        resultat = resultat + moteur.getPile().getPile()[i]->getString() + "\n";
+    }
+    ui.PileCalcul->setPlainText(resultat);
+
+    pile_affichage.push(moteur.getPile().getString() + "\n");
+
+    resultat = "";
+    for(int i = 0; i < pile_affichage.size(); i++){
+        resultat = resultat + pile_affichage[i] + "\n";
+    }
+    ui.PileAffichage->setPlainText(resultat);
+
+    //Vider le QLineEdit
+    ui.lineEdit->setText("");
+}
+
+void Onglet::annuler(){
+
+}
+
+void Onglet::retablir(){
+
 }

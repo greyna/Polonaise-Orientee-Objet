@@ -1,0 +1,16 @@
+[?? ?? 19 01:22:05 2012] Priorité 2		Opération binaire sur un seul élément!
+[?? ?? 19 09:05:25 2012] Priorité 2		Opération binaire sur un seul élément!
+[?? ?? 19 09:05:47 2012] Priorité 2		Opération binaire sur un seul élément!
+[?? ?? 19 13:08:11 2012] Priorité 2		SIN non disponible en complexe.
+[?? ?? 19 13:17:07 2012] Priorité 2		OperationException : Pile vide!
+[?? ?? 19 13:18:07 2012] Priorite 2		OperationException : Pile vide!
+[?? ?? 19 13:20:27 2012] Priorite 2		OperationException : Pile vide!
+[?? ?? 19 13:22:54 2012] Priorite 3		Exception non throw : Attention: pertes d'informations! Veuillez passer en reel!
+[?? ?? 19 13:34:11 2012] Priorite 1		FactoryException : 1$0 n'est pas valide a la creation!
+[?? ?? 19 13:34:12 2012] Priorite 1		FactoryException : 1$0 n'est pas valide a la creation!
+[?? ?? 19 13:34:12 2012] Priorite 1		FactoryException : 1$0 n'est pas valide a la creation!
+[?? ?? 19 13:38:57 2012] Priorite 2		OperationException : FACT non disponible en reel ou rationnel.
+[?? ?? 19 13:40:23 2012] Priorite 2		OperationException : ! non disponible en reel ou rationnel.
+[?? ?? 19 14:05:58 2012] Priorite 1		FactoryException : 3/4 n'est pas valide a la creation!
+[?? ?? 19 14:08:31 2012] Priorite 1		FactoryException : 3/4 n'est pas valide a la creation!
+[?? ?? 19 14:08:32 2012] Priorite 1		FactoryException : 3/4 n'est pas valide a la creation!

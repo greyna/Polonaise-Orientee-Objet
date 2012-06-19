@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'onglet.ui'
 **
-** Created: Mon Jun 18 21:37:51 2012
+** Created: Tue Jun 19 14:09:39 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -23,7 +23,7 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QStatusBar>
-#include <QtGui/QTextBrowser>
+#include <QtGui/QTextEdit>
 #include <QtGui/QToolBar>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
@@ -77,8 +77,6 @@ public:
     QPushButton *Buttonmoins;
     QPushButton *Buttonfois;
     QPushButton *Buttondiviser;
-    QPushButton *Buttoneval;
-    QPushButton *Buttonegale;
     QPushButton *Buttonlog;
     QPushButton *Buttonfact;
     QRadioButton *radioButtonradian;
@@ -88,14 +86,18 @@ public:
     QPushButton *Buttondrop;
     QPushButton *Buttonclear;
     QLabel *label;
-    QTextBrowser *resultdisplay;
-    QTextBrowser *piledisplay;
     QVBoxLayout *verticalLayout_3;
     QLineEdit *lineEdit;
-    QPushButton *Buttonretour;
-    QPushButton *Buttoninv;
-    QPushButton *Buttonsign;
+    QPushButton *Buttonenter;
     QPushButton *Buttonsqrt;
+    QPushButton *Buttonsign;
+    QPushButton *Buttoninv;
+    QPushButton *Buttoneval;
+    QTextEdit *PileCalcul;
+    QTextEdit *PileAffichage;
+    QPushButton *Buttonretablir;
+    QPushButton *Buttonannuler;
+    QPushButton *Buttonspace;
     QLabel *label_3;
     QLabel *label_2;
 
@@ -119,11 +121,11 @@ public:
         _modComplexeON->setObjectName(QString::fromUtf8("_modComplexeON"));
         _modComplexeON->setEnabled(true);
         _modComplexeON->setGeometry(QRect(10, 20, 143, 20));
-        _modComplexeON->setChecked(false);
+        _modComplexeON->setChecked(true);
         _modComplexeOFF = new QRadioButton(groupBox_4);
         _modComplexeOFF->setObjectName(QString::fromUtf8("_modComplexeOFF"));
         _modComplexeOFF->setGeometry(QRect(10, 40, 143, 20));
-        _modComplexeOFF->setChecked(true);
+        _modComplexeOFF->setChecked(false);
         groupBox_2 = new QGroupBox(Widget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setGeometry(QRect(10, 110, 111, 91));
@@ -132,14 +134,15 @@ public:
         groupBox_2->setCheckable(false);
         _modEntiers = new QRadioButton(groupBox_2);
         _modEntiers->setObjectName(QString::fromUtf8("_modEntiers"));
-        _modEntiers->setGeometry(QRect(0, 20, 143, 20));
-        _modEntiers->setChecked(true);
+        _modEntiers->setGeometry(QRect(10, 20, 81, 20));
+        _modEntiers->setChecked(false);
         _modRationnels = new QRadioButton(groupBox_2);
         _modRationnels->setObjectName(QString::fromUtf8("_modRationnels"));
-        _modRationnels->setGeometry(QRect(0, 40, 143, 20));
+        _modRationnels->setGeometry(QRect(10, 40, 81, 20));
         _modReels = new QRadioButton(groupBox_2);
         _modReels->setObjectName(QString::fromUtf8("_modReels"));
-        _modReels->setGeometry(QRect(0, 60, 143, 20));
+        _modReels->setGeometry(QRect(10, 60, 61, 21));
+        _modReels->setChecked(true);
         groupBox_3 = new QGroupBox(Widget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(10, 220, 111, 160));
@@ -163,172 +166,162 @@ public:
         Button7 = new QPushButton(gridLayoutWidget);
         Button7->setObjectName(QString::fromUtf8("Button7"));
 
-        gridLayout->addWidget(Button7, 5, 3, 1, 1);
+        gridLayout->addWidget(Button7, 6, 3, 1, 1);
 
         Button8 = new QPushButton(gridLayoutWidget);
         Button8->setObjectName(QString::fromUtf8("Button8"));
 
-        gridLayout->addWidget(Button8, 5, 4, 1, 1);
+        gridLayout->addWidget(Button8, 6, 4, 1, 1);
 
         Button9 = new QPushButton(gridLayoutWidget);
         Button9->setObjectName(QString::fromUtf8("Button9"));
 
-        gridLayout->addWidget(Button9, 5, 5, 1, 1);
+        gridLayout->addWidget(Button9, 6, 5, 1, 1);
 
         Button4 = new QPushButton(gridLayoutWidget);
         Button4->setObjectName(QString::fromUtf8("Button4"));
 
-        gridLayout->addWidget(Button4, 6, 3, 1, 1);
+        gridLayout->addWidget(Button4, 7, 3, 1, 1);
 
         Button5 = new QPushButton(gridLayoutWidget);
         Button5->setObjectName(QString::fromUtf8("Button5"));
 
-        gridLayout->addWidget(Button5, 6, 4, 1, 1);
+        gridLayout->addWidget(Button5, 7, 4, 1, 1);
 
         Button6 = new QPushButton(gridLayoutWidget);
         Button6->setObjectName(QString::fromUtf8("Button6"));
 
-        gridLayout->addWidget(Button6, 6, 5, 1, 1);
+        gridLayout->addWidget(Button6, 7, 5, 1, 1);
 
         Button1 = new QPushButton(gridLayoutWidget);
         Button1->setObjectName(QString::fromUtf8("Button1"));
 
-        gridLayout->addWidget(Button1, 7, 3, 1, 1);
+        gridLayout->addWidget(Button1, 8, 3, 1, 1);
 
         Button2 = new QPushButton(gridLayoutWidget);
         Button2->setObjectName(QString::fromUtf8("Button2"));
 
-        gridLayout->addWidget(Button2, 7, 4, 1, 1);
+        gridLayout->addWidget(Button2, 8, 4, 1, 1);
 
         Button3 = new QPushButton(gridLayoutWidget);
         Button3->setObjectName(QString::fromUtf8("Button3"));
 
-        gridLayout->addWidget(Button3, 7, 5, 1, 1);
+        gridLayout->addWidget(Button3, 8, 5, 1, 1);
 
         Button0 = new QPushButton(gridLayoutWidget);
         Button0->setObjectName(QString::fromUtf8("Button0"));
 
-        gridLayout->addWidget(Button0, 9, 3, 1, 2);
+        gridLayout->addWidget(Button0, 12, 3, 1, 2);
 
         Buttonvirgule = new QPushButton(gridLayoutWidget);
         Buttonvirgule->setObjectName(QString::fromUtf8("Buttonvirgule"));
 
-        gridLayout->addWidget(Buttonvirgule, 9, 5, 1, 1);
+        gridLayout->addWidget(Buttonvirgule, 12, 5, 1, 1);
 
         Buttonswap = new QPushButton(gridLayoutWidget);
         Buttonswap->setObjectName(QString::fromUtf8("Buttonswap"));
 
-        gridLayout->addWidget(Buttonswap, 4, 0, 1, 1);
+        gridLayout->addWidget(Buttonswap, 5, 0, 1, 1);
 
         Buttonmean = new QPushButton(gridLayoutWidget);
         Buttonmean->setObjectName(QString::fromUtf8("Buttonmean"));
 
-        gridLayout->addWidget(Buttonmean, 4, 1, 1, 1);
+        gridLayout->addWidget(Buttonmean, 5, 1, 1, 1);
 
         Buttonln = new QPushButton(gridLayoutWidget);
         Buttonln->setObjectName(QString::fromUtf8("Buttonln"));
 
-        gridLayout->addWidget(Buttonln, 5, 1, 1, 1);
+        gridLayout->addWidget(Buttonln, 6, 1, 1, 1);
 
         Buttonsinh = new QPushButton(gridLayoutWidget);
         Buttonsinh->setObjectName(QString::fromUtf8("Buttonsinh"));
 
-        gridLayout->addWidget(Buttonsinh, 6, 0, 1, 1);
+        gridLayout->addWidget(Buttonsinh, 7, 0, 1, 1);
 
         Buttonsin = new QPushButton(gridLayoutWidget);
         Buttonsin->setObjectName(QString::fromUtf8("Buttonsin"));
 
-        gridLayout->addWidget(Buttonsin, 6, 1, 1, 1);
+        gridLayout->addWidget(Buttonsin, 7, 1, 1, 1);
 
         Buttoncosh = new QPushButton(gridLayoutWidget);
         Buttoncosh->setObjectName(QString::fromUtf8("Buttoncosh"));
 
-        gridLayout->addWidget(Buttoncosh, 7, 0, 1, 1);
+        gridLayout->addWidget(Buttoncosh, 8, 0, 1, 1);
 
         Buttontanh = new QPushButton(gridLayoutWidget);
         Buttontanh->setObjectName(QString::fromUtf8("Buttontanh"));
 
-        gridLayout->addWidget(Buttontanh, 9, 0, 1, 1);
+        gridLayout->addWidget(Buttontanh, 12, 0, 1, 1);
 
         Buttontan = new QPushButton(gridLayoutWidget);
         Buttontan->setObjectName(QString::fromUtf8("Buttontan"));
 
-        gridLayout->addWidget(Buttontan, 9, 1, 1, 1);
+        gridLayout->addWidget(Buttontan, 12, 1, 1, 1);
 
         Buttoncos = new QPushButton(gridLayoutWidget);
         Buttoncos->setObjectName(QString::fromUtf8("Buttoncos"));
 
-        gridLayout->addWidget(Buttoncos, 7, 1, 1, 1);
+        gridLayout->addWidget(Buttoncos, 8, 1, 1, 1);
 
         Buttonmod = new QPushButton(gridLayoutWidget);
         Buttonmod->setObjectName(QString::fromUtf8("Buttonmod"));
 
-        gridLayout->addWidget(Buttonmod, 4, 5, 1, 1);
+        gridLayout->addWidget(Buttonmod, 5, 5, 1, 1);
 
         Buttonxy = new QPushButton(gridLayoutWidget);
         Buttonxy->setObjectName(QString::fromUtf8("Buttonxy"));
 
-        gridLayout->addWidget(Buttonxy, 5, 2, 1, 1);
+        gridLayout->addWidget(Buttonxy, 6, 2, 1, 1);
 
         Buttonx2 = new QPushButton(gridLayoutWidget);
         Buttonx2->setObjectName(QString::fromUtf8("Buttonx2"));
 
-        gridLayout->addWidget(Buttonx2, 6, 2, 1, 1);
+        gridLayout->addWidget(Buttonx2, 7, 2, 1, 1);
 
         Buttonx3 = new QPushButton(gridLayoutWidget);
         Buttonx3->setObjectName(QString::fromUtf8("Buttonx3"));
 
-        gridLayout->addWidget(Buttonx3, 7, 2, 1, 1);
+        gridLayout->addWidget(Buttonx3, 8, 2, 1, 1);
 
         Buttonsum = new QPushButton(gridLayoutWidget);
         Buttonsum->setObjectName(QString::fromUtf8("Buttonsum"));
 
-        gridLayout->addWidget(Buttonsum, 4, 2, 1, 1);
+        gridLayout->addWidget(Buttonsum, 5, 2, 1, 1);
 
         Buttondollar = new QPushButton(gridLayoutWidget);
         Buttondollar->setObjectName(QString::fromUtf8("Buttondollar"));
 
-        gridLayout->addWidget(Buttondollar, 4, 4, 1, 1);
+        gridLayout->addWidget(Buttondollar, 5, 4, 1, 1);
 
         Buttonplus = new QPushButton(gridLayoutWidget);
         Buttonplus->setObjectName(QString::fromUtf8("Buttonplus"));
 
-        gridLayout->addWidget(Buttonplus, 4, 6, 1, 1);
+        gridLayout->addWidget(Buttonplus, 5, 6, 1, 1);
 
         Buttonmoins = new QPushButton(gridLayoutWidget);
         Buttonmoins->setObjectName(QString::fromUtf8("Buttonmoins"));
 
-        gridLayout->addWidget(Buttonmoins, 5, 6, 1, 1);
+        gridLayout->addWidget(Buttonmoins, 6, 6, 1, 1);
 
         Buttonfois = new QPushButton(gridLayoutWidget);
         Buttonfois->setObjectName(QString::fromUtf8("Buttonfois"));
 
-        gridLayout->addWidget(Buttonfois, 6, 6, 1, 1);
+        gridLayout->addWidget(Buttonfois, 7, 6, 1, 1);
 
         Buttondiviser = new QPushButton(gridLayoutWidget);
         Buttondiviser->setObjectName(QString::fromUtf8("Buttondiviser"));
 
-        gridLayout->addWidget(Buttondiviser, 7, 6, 1, 1);
-
-        Buttoneval = new QPushButton(gridLayoutWidget);
-        Buttoneval->setObjectName(QString::fromUtf8("Buttoneval"));
-
-        gridLayout->addWidget(Buttoneval, 9, 6, 1, 1);
-
-        Buttonegale = new QPushButton(gridLayoutWidget);
-        Buttonegale->setObjectName(QString::fromUtf8("Buttonegale"));
-
-        gridLayout->addWidget(Buttonegale, 9, 7, 1, 1);
+        gridLayout->addWidget(Buttondiviser, 8, 6, 1, 1);
 
         Buttonlog = new QPushButton(gridLayoutWidget);
         Buttonlog->setObjectName(QString::fromUtf8("Buttonlog"));
 
-        gridLayout->addWidget(Buttonlog, 5, 0, 1, 1);
+        gridLayout->addWidget(Buttonlog, 6, 0, 1, 1);
 
         Buttonfact = new QPushButton(gridLayoutWidget);
         Buttonfact->setObjectName(QString::fromUtf8("Buttonfact"));
 
-        gridLayout->addWidget(Buttonfact, 9, 2, 1, 1);
+        gridLayout->addWidget(Buttonfact, 12, 2, 1, 1);
 
         radioButtonradian = new QRadioButton(gridLayoutWidget);
         radioButtonradian->setObjectName(QString::fromUtf8("radioButtonradian"));
@@ -344,7 +337,7 @@ public:
         Buttonapo = new QPushButton(gridLayoutWidget);
         Buttonapo->setObjectName(QString::fromUtf8("Buttonapo"));
 
-        gridLayout->addWidget(Buttonapo, 4, 3, 1, 1);
+        gridLayout->addWidget(Buttonapo, 5, 3, 1, 1);
 
         Buttondup = new QPushButton(gridLayoutWidget);
         Buttondup->setObjectName(QString::fromUtf8("Buttondup"));
@@ -366,16 +359,6 @@ public:
 
         gridLayout->addWidget(label, 2, 0, 1, 1);
 
-        resultdisplay = new QTextBrowser(gridLayoutWidget);
-        resultdisplay->setObjectName(QString::fromUtf8("resultdisplay"));
-
-        gridLayout->addWidget(resultdisplay, 0, 7, 1, 1);
-
-        piledisplay = new QTextBrowser(gridLayoutWidget);
-        piledisplay->setObjectName(QString::fromUtf8("piledisplay"));
-
-        gridLayout->addWidget(piledisplay, 0, 1, 1, 5);
-
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
@@ -387,25 +370,55 @@ public:
 
         gridLayout->addLayout(verticalLayout_3, 2, 1, 1, 6);
 
-        Buttonretour = new QPushButton(gridLayoutWidget);
-        Buttonretour->setObjectName(QString::fromUtf8("Buttonretour"));
+        Buttonenter = new QPushButton(gridLayoutWidget);
+        Buttonenter->setObjectName(QString::fromUtf8("Buttonenter"));
 
-        gridLayout->addWidget(Buttonretour, 2, 7, 1, 1);
+        gridLayout->addWidget(Buttonenter, 12, 6, 1, 1);
 
-        Buttoninv = new QPushButton(gridLayoutWidget);
-        Buttoninv->setObjectName(QString::fromUtf8("Buttoninv"));
+        Buttonsqrt = new QPushButton(gridLayoutWidget);
+        Buttonsqrt->setObjectName(QString::fromUtf8("Buttonsqrt"));
 
-        gridLayout->addWidget(Buttoninv, 7, 7, 1, 1);
+        gridLayout->addWidget(Buttonsqrt, 5, 7, 1, 1);
 
         Buttonsign = new QPushButton(gridLayoutWidget);
         Buttonsign->setObjectName(QString::fromUtf8("Buttonsign"));
 
         gridLayout->addWidget(Buttonsign, 6, 7, 1, 1);
 
-        Buttonsqrt = new QPushButton(gridLayoutWidget);
-        Buttonsqrt->setObjectName(QString::fromUtf8("Buttonsqrt"));
+        Buttoninv = new QPushButton(gridLayoutWidget);
+        Buttoninv->setObjectName(QString::fromUtf8("Buttoninv"));
 
-        gridLayout->addWidget(Buttonsqrt, 5, 7, 1, 1);
+        gridLayout->addWidget(Buttoninv, 7, 7, 1, 1);
+
+        Buttoneval = new QPushButton(gridLayoutWidget);
+        Buttoneval->setObjectName(QString::fromUtf8("Buttoneval"));
+
+        gridLayout->addWidget(Buttoneval, 8, 7, 1, 1);
+
+        PileCalcul = new QTextEdit(gridLayoutWidget);
+        PileCalcul->setObjectName(QString::fromUtf8("PileCalcul"));
+
+        gridLayout->addWidget(PileCalcul, 0, 7, 1, 1);
+
+        PileAffichage = new QTextEdit(gridLayoutWidget);
+        PileAffichage->setObjectName(QString::fromUtf8("PileAffichage"));
+
+        gridLayout->addWidget(PileAffichage, 0, 1, 1, 5);
+
+        Buttonretablir = new QPushButton(gridLayoutWidget);
+        Buttonretablir->setObjectName(QString::fromUtf8("Buttonretablir"));
+
+        gridLayout->addWidget(Buttonretablir, 1, 7, 1, 1);
+
+        Buttonannuler = new QPushButton(gridLayoutWidget);
+        Buttonannuler->setObjectName(QString::fromUtf8("Buttonannuler"));
+
+        gridLayout->addWidget(Buttonannuler, 1, 6, 1, 1);
+
+        Buttonspace = new QPushButton(gridLayoutWidget);
+        Buttonspace->setObjectName(QString::fromUtf8("Buttonspace"));
+
+        gridLayout->addWidget(Buttonspace, 2, 7, 1, 1);
 
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -478,9 +491,6 @@ public:
         Buttonfois->setShortcut(QApplication::translate("Widget", "*", 0, QApplication::UnicodeUTF8));
         Buttondiviser->setText(QApplication::translate("Widget", "/", 0, QApplication::UnicodeUTF8));
         Buttondiviser->setShortcut(QApplication::translate("Widget", "/", 0, QApplication::UnicodeUTF8));
-        Buttoneval->setText(QApplication::translate("Widget", "EVAL", 0, QApplication::UnicodeUTF8));
-        Buttonegale->setText(QApplication::translate("Widget", "=", 0, QApplication::UnicodeUTF8));
-        Buttonegale->setShortcut(QApplication::translate("Widget", "=", 0, QApplication::UnicodeUTF8));
         Buttonlog->setText(QApplication::translate("Widget", "LOG", 0, QApplication::UnicodeUTF8));
         Buttonfact->setText(QApplication::translate("Widget", "!", 0, QApplication::UnicodeUTF8));
         Buttonfact->setShortcut(QApplication::translate("Widget", "!", 0, QApplication::UnicodeUTF8));
@@ -491,12 +501,21 @@ public:
         Buttondup->setText(QApplication::translate("Widget", "DUP", 0, QApplication::UnicodeUTF8));
         Buttondrop->setText(QApplication::translate("Widget", "DROP", 0, QApplication::UnicodeUTF8));
         Buttonclear->setText(QApplication::translate("Widget", "CLEAR", 0, QApplication::UnicodeUTF8));
+        Buttonclear->setShortcut(QApplication::translate("Widget", "Ctrl+C", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("Widget", "Polonaise Orient\303\251e Objet", 0, QApplication::UnicodeUTF8));
-        Buttonretour->setText(QApplication::translate("Widget", "RETOUR", 0, QApplication::UnicodeUTF8));
-        Buttonretour->setShortcut(QApplication::translate("Widget", "Backspace", 0, QApplication::UnicodeUTF8));
-        Buttoninv->setText(QApplication::translate("Widget", "INV", 0, QApplication::UnicodeUTF8));
-        Buttonsign->setText(QApplication::translate("Widget", "\302\261", 0, QApplication::UnicodeUTF8));
+        Buttonenter->setText(QApplication::translate("Widget", "Entr\303\251e", 0, QApplication::UnicodeUTF8));
+        Buttonenter->setShortcut(QApplication::translate("Widget", "Return", 0, QApplication::UnicodeUTF8));
         Buttonsqrt->setText(QApplication::translate("Widget", "\342\210\232", 0, QApplication::UnicodeUTF8));
+        Buttonsign->setText(QApplication::translate("Widget", "\302\261", 0, QApplication::UnicodeUTF8));
+        Buttoninv->setText(QApplication::translate("Widget", "INV", 0, QApplication::UnicodeUTF8));
+        Buttoneval->setText(QApplication::translate("Widget", "EVAL", 0, QApplication::UnicodeUTF8));
+        Buttoneval->setShortcut(QApplication::translate("Widget", "Ctrl+Return", 0, QApplication::UnicodeUTF8));
+        Buttonretablir->setText(QApplication::translate("Widget", "R\303\251tablir", 0, QApplication::UnicodeUTF8));
+        Buttonretablir->setShortcut(QApplication::translate("Widget", "Ctrl+Y", 0, QApplication::UnicodeUTF8));
+        Buttonannuler->setText(QApplication::translate("Widget", "Annuler", 0, QApplication::UnicodeUTF8));
+        Buttonannuler->setShortcut(QApplication::translate("Widget", "Ctrl+Z", 0, QApplication::UnicodeUTF8));
+        Buttonspace->setText(QApplication::translate("Widget", "SPACE", 0, QApplication::UnicodeUTF8));
+        Buttonspace->setShortcut(QApplication::translate("Widget", "Space", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("Widget", "PileAffichage", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("Widget", "PileCalcul", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

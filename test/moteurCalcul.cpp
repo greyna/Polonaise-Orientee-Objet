@@ -3,11 +3,8 @@
 using namespace std;
 using namespace calcul;
 
-void MoteurCalcul::ajouterResoudre (QString ajout) {
+void MoteurCalcul::ajouterResoudre(QString ajout) {
     pile_stockage.ajouter(ajout);
-    // Communication au moteur d'affichage
-    cout<<"Ajout : "<<ajout.toStdString()<<endl;
-    cout<<"Pile de stockage : "<<pile_stockage.getString().toStdString()<<endl;
 }
 
 void MoteurCalcul::changerMode (QString mode_type) {

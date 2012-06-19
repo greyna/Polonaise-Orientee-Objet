@@ -13,8 +13,11 @@ private:
     PileCst pile_stockage;
 	
 public:
-    void ajouterResoudre (QString ajout);
-    void changerMode (QString mode_type = "C");
+    MoteurCalcul() { }
+    MoteurCalcul(MoteurCalcul& a_copier) { pile_stockage = PileCst(a_copier.pile_stockage); }
+    void ajouterResoudre(QString ajout);
+    const PileCst& getPile() const { return pile_stockage; }
+    void changerMode(QString mode_type = "C");
     void changerAngle (QString mode_angle = "degre");
 };
 

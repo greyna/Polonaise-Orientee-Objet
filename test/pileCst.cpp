@@ -10,21 +10,21 @@ using namespace calcul;
 // --------------------------------------------------------------------
 void PileCst::resoudre(QString operateur) {
 try {
-    // Test d'autorisation des opérations
+    // Test d'autorisation des operations
     if( (mode==C || mode==CQ || mode==CZ) &&
             QRegExp( "^(\\b(!|MOD|POW|SIN|COS|TAN|SINH|COSH|TANH|SQRT|INV|LN|LOG|FACT)\\b)$" )
             .exactMatch(operateur) )
         throw OperationException(operateur + " non disponible en complexe.");
 
     if( (mode==C || mode==Q) &&
-            QRegExp( "^(\\b(!|MOD|FACT)\\b)$" )
+            QRegExp( "^(!|(\\b(MOD|FACT)\\b))$" )
             .exactMatch(operateur) )
-        throw OperationException(operateur + " non disponible en réel ou rationnel.");
+        throw OperationException(operateur + " non disponible en reel ou rationnel.");
 
     if (operateur=="EVAL" && topCst().isNumber())
         throw OperationException(operateur + " non disponible sur un nombre.");
 
-    // Opération EVAL
+    // Operation EVAL
     else if (operateur=="EVAL") {
 
         if (videCst())
@@ -36,18 +36,26 @@ try {
         return;
     }
 
-    // Opération binaire
+    // Operation binaire
     if ( QRegExp("^([+\\-\\*/]|\\b(SWAP|POW|MOD)\\b)$")
           .exactMatch(operateur) ) {
 
         if (videCst())
             throw OperationException("Pile vide!");
-        Cst& operande1 = topCst();
+        Cst* operande11 = &topCst();
         popCst();
         if (videCst())
-            throw OperationException("Opération binaire sur un seul élément!");
-        Cst& operande2 = topCst();
+            throw OperationException("Operation binaire sur un seul element!");
+        Cst* operande22 = &topCst();
         popCst();
+
+        if (!operande22->isNumber()) {
+            Cst* temp = operande22;
+            operande22 = operande11;
+            operande11 = temp;
+        }
+        Cst& operande1 = *operande11;
+        Cst& operande2 = *operande22;
 
         if (operateur=="+") { pushCst(operande1+operande2); }
         else if (operateur=="-") { pushCst(operande1-operande2); }
@@ -55,7 +63,7 @@ try {
         else if (operateur=="/") { pushCst(operande1/operande2); }
         else if (operateur=="MOD") { pushCst(operande1.MOD(operande2)); }
         else if (operateur=="POW") { pushCst(operande1.POW(operande2)); }
-        // Opérateur de pile à revoir : échange seulement le premier et le dernier élément
+        // Operateur de pile a revoir : echange seulement le premier et le dernier element
         else if (operateur=="SWAP") { swap(Entier(operande1).getNum(), Entier(operande2).getNum()); }
 
         delete &operande1;
@@ -63,7 +71,7 @@ try {
         return;
     }
 
-    // Opération unaire
+    // Operation unaire
     if ( QRegExp("^(!|\\b(SUM|MEAN|FACT|SIN|COS|TAN|SINH|COSH|TANH|SQRT|INV|LN|LOG|SQR|SQRT|CUBE)\\b)$")
           .exactMatch(operateur) ) {
 
@@ -87,7 +95,7 @@ try {
         else if (operateur=="FACT") { pushCst(operande.FACT()); }
         else if (operateur=="SIGN") { pushCst(operande.SIGN()); }
 
-        // Opérateur de pile à revoir, font la somme et la moyenne de tous les éléments pour le moment
+        // Operateur de pile a revoir, font la somme et la moyenne de tous les elements pour le moment
         else if (operateur=="SUM") { sum(Entier(operande).getNum()); }
         else if (operateur=="MEAN") { mean(Entier(operande).getNum()); }
 
@@ -95,7 +103,7 @@ try {
         return;
     }
 
-    // Opération sans argument (sur la pile)
+    // Operation sans argument (sur la pile)
     if ( QRegExp("^(\\b(DUP|DROP|CLEAR)\\b)$")
           .exactMatch(operateur) ) {
         if (operateur=="DUP") { dup(); }
@@ -137,11 +145,10 @@ void PileCst::ajouter(QString str) {
 
 
 void PileCst::setString() {
-    QString temp("'");
+    QString temp(" ");
     for (int i=0; i < pileCst.size(); ++i)
         temp = temp + " " + pileCst[i]->getString();
-    temp = temp + "' (sommet à droite)";
-
+    //temp = temp + "  (sommet a droite)";
     string_associe = temp;
 }
 void PileCst::pushCst(Cst& nouveau) { pileCst.push(&nouveau); setString(); }
@@ -186,11 +193,11 @@ void PileCst::swap (int x, int y) {
 void PileCst::sum (int x) {
     try {
         if (x<=0 || x>pileCst.size())
-            throw OperationException("Nombre d'éléments de sum incorrects");
+            throw OperationException("Nombre d'elements de sum incorrects");
 
         Cst* resultat = &topCst();
         popCst();
-        // Fuite mémoire ici, mais impossible de savoir comment la gérer...
+        // Fuite memoire ici, mais impossible de savoir comment la gerer...
         for (int i = 1; i<x; ++i) {
             Cst* temp = &(*resultat + topCst());
             //cout<<"resultat = "<<resultat->getString().toStdString()<<"  ; topCst() = "<<topCst().getString().toStdString()<<"  ; temp = "<<temp->getString().toStdString()<<endl;
@@ -209,7 +216,7 @@ void PileCst::sum (int x) {
 void PileCst::mean (int x) {
     try {
         if (x<=0 || x>pileCst.size())
-            throw OperationException("Nombre d'éléments de mean incorrects");
+            throw OperationException("Nombre d'elements de mean incorrects");
 
         sum(x);
         Cst& somme = topCst();
@@ -228,8 +235,10 @@ void PileCst::mean (int x) {
     }
 }
 void PileCst::clear () {
-    while (!videCst())
+    while (!videCst()) {
+        delete &topCst();
         popCst();
+    }
     setString();
 }
 void PileCst::dup () {

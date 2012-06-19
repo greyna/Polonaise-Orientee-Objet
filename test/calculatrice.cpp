@@ -17,11 +17,25 @@ Calculatrice:: ~Calculatrice(){
 }
 
 void Calculatrice:: ouvrir(){
-    liste[nb_onglets] = new Onglet(nb_onglets);
+    tab = new QTabWidget();
+    liste[nb_onglets] = new Onglet(nb_onglets, tab, 0);
     liste[nb_onglets]->show();
     nb_onglets++;
 }
 
 void Calculatrice:: newOnglet(){
+    liste[nb_onglets] = new Onglet(nb_onglets, tab, 1);
+    //liste[nb_onglets]->show();
+    nb_onglets++;
+}
+
+
+void Calculatrice:: deleteOnglet(unsigned int num){
+    delete liste[num];
+    //liste[nb_onglets]->show();
+    nb_onglets--;
+}
+
+void duplicate(Onglet* o){
 
 }

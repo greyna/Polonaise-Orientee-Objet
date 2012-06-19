@@ -5,6 +5,7 @@
 #include <QtGui>
 #include "ui_onglet.h"
 #include "moteurCalcul.h"
+#include "histo.h"
 using namespace Ui;
 using namespace calcul;
 
@@ -12,13 +13,19 @@ class Onglet:public QWidget{
     Q_OBJECT
 
 public:
-    Onglet(unsigned int num);
+    explicit Onglet(unsigned int num, QTabWidget *tab, unsigned int init);
+    explicit Onglet(unsigned int num, QTabWidget *tab, Onglet* o);
     ~Onglet();
+    void saveContext();
+    void loadContext();
+    MoteurCalcul getMot();
 private:
-    QTabWidget *tab;
+    //Histo histo;
     Ui_Widget ui;
     MoteurCalcul moteur;
     QStack<QString> pile_affichage;
+    QString modeCalcul;
+    unsigned int numOnglet;
     void connects();
     void opAll();
     void opNonReels();
@@ -27,12 +34,9 @@ private:
     void opNonRationels();
     void clavierBasicVisible(bool visible);
     void clavierAvanceVisible(bool visible);
+    void closeEvent(QCloseEvent *event);
 public slots:
-    void complexeActive();
-    void complexeDesactive();
-    void constReel();
-    void constRationel();
-    void constEntier();
+    void mode();
     void clavierBasic();
     void clavierAvance();
     void radian();
@@ -77,7 +81,12 @@ public slots:
     void sqrt();
     void signe();
     void inv();
-    void egale();
     void enter();
+    void space();
+    void annuler();
+    void retablir();
+    void newOnglet();
+    void deleteOnglet();
+    void dupOnglet();
 };
 #endif

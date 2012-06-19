@@ -1,0 +1,6 @@
+if(QRegExp( "^([+\\-\\*/]|\\b(MOD|POW|SIGN)\\b)$" ).exactMatch(in))
+else if(QRegExp("^(!|\\b(SIN|COS|TAN|COSH|SINH|TANH|LN|LOG|INV|SQRT|SQR|CUBE|!|EVAL)\\b)$").exactMatch(in))
+if(QRegExp( "^([+\\-\\*/!]|\\b(MOD|POW|SIN|COS|TAN|SINH|COSH|TANH|SQR|CUBE|SQRT|SIGN|INV|LN|LOG)\\b)$" ).exactMatch(input))
+if(QRegExp( "^([+\\-\\*/]|\\b(MOD|POW|SIGN)\\b)$" ).exactMatch(input))
+if(QRegExp( "^([+\\-\\*/!]|\\b(MOD|POW|SIN|COS|TAN|SINH|COSH|TANH|SQR|CUBE|SQRT|SIGN|INV|LN|LOG)\\b)$" ).exactMatch(input))
+if(QRegExp( "^([+\\-\\*/]|\\b(MOD|POW|SIGN)\\b)$" ).exactMatch(input))

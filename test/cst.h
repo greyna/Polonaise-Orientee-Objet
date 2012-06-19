@@ -21,15 +21,16 @@ protected :
 
 public:
     QString getString() const{ return string_associe; }
+    virtual ~Cst() { }
 
     virtual bool isNumber() const = 0;
 
-    // On peut supprimmer ces méthodes de cette classe abstraite si on fait des dynamic_cast avant leur utilisation dans les opérateurs des classes filles
-    virtual double getValeur() const { Exception("Méthode getValeur de classe abstraite Cst appelée, c'est un problème!!").sendMessage().sendLog(); return 0; }
-    virtual int getNum() const { Exception("Méthode getNum de classe abstraite Cst appelée, c'est un problème!!").sendMessage().sendLog(); return 0; }
-    virtual int getDen() const { Exception("Méthode getDen de classe abstraite Cst appelée, c'est un problème!!").sendMessage().sendLog(); return 0; }
+    // On peut supprimmer ces methodes de cette classe abstraite si on fait des dynamic_cast avant leur utilisation dans les operateurs des classes filles
+    virtual double getValeur() const { Exception("Methode getValeur de classe abstraite Cst appelee, c'est un probleme!!").sendMessage().sendLog(); return 0; }
+    virtual int getNum() const { Exception("Methode getNum de classe abstraite Cst appelee, c'est un probleme!!").sendMessage().sendLog(); return 0; }
+    virtual int getDen() const { Exception("Methode getDen de classe abstraite Cst appelee, c'est un probleme!!").sendMessage().sendLog(); return 0; }
 
-    // Ces 20 opérations renvoient un nouvel objet alloué (EVAL en plus pour faciliter le polymorphisme).
+    // Ces 20 operations renvoient un nouvel objet alloue (EVAL en plus pour faciliter le polymorphisme).
     virtual Cst& operator +(const Cst& other)const=0;
     virtual Cst& operator *(const Cst& other)const=0;
     virtual Cst& operator -(const Cst& other)const=0;
@@ -61,55 +62,49 @@ protected :
     void setString(){ string_associe = this->real().getString() + "$" + this->imag().getString(); }
 
 public:
+    virtual ~Complexe() { }
     bool isNumber() const { return true; }
     Complexe(const T& re = T(), const T& img = T()): complex<T>(re, img) { setString(); }
 
-    // Fuite mémoire dans tous ces opérateurs : on utilise les opérateurs de réel, rationnel et entier qui renvoient chaque fois un nouvel objet alloué
+    // Fuite memoire dans tous ces operateurs : on utilise les operateurs de reel, rationnel et entier qui renvoient chaque fois un nouvel objet alloue
     Complexe<T>& operator +(const Cst& other)const {
-        if (other.isNumber()) {
             const Complexe<T>& temp = dynamic_cast< const Complexe<T>& > (other);
             return *(new Complexe<T> (this->real()+temp.real(), this->imag()+temp.imag()));
-        } else return *(new Complexe<T>);
     }
     Complexe<T>& operator *(const Cst& other)const {
-        if (other.isNumber()) {
             const Complexe<T>& temp = dynamic_cast< const Complexe<T>& > (other);
             return *(new Complexe<T> (this->real()*temp.real() - this->imag()*temp.imag(), temp.real()*this->imag() + this->real()*temp.imag()));
-        }
     }
     Complexe<T>& operator -(const Cst& other)const {
-        if (other.isNumber()) {
             const Complexe<T>& temp = dynamic_cast< const Complexe<T>& > (other);
             return *(new Complexe<T> (this->real()-temp.real(), this->imag()-temp.imag()));
-        }
     }
     Complexe<T>& operator /(const Cst& other)const  {
-        if (other.isNumber()) {
             const Complexe<T>& temp = dynamic_cast< const Complexe<T>& > (other);
+            if (temp.imag().getValeur()==0 && temp.real().getValeur()==0) throw OperationException("division par 0");
             return *(new Complexe<T> ( ((this->real()*temp.real()) + (this->imag()*temp.imag())) / (temp.real().SQR() + temp.imag().SQR()),
                                        ((this->imag()*temp.real()) - (this->real()*temp.imag())) / (temp.real().SQR() + temp.imag().SQR()) ));
-        }
     }
-    Complexe<T>& MOD(const Cst& other)const{Exception("La fonction modulo n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& POW(const Cst& other)const{Exception("La fonction puissance n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& MOD(const Cst& other)const{Exception("La fonction modulo n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& POW(const Cst& other)const{Exception("La fonction puissance n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
 
-    // Fuite mémoire dans les 3 ci-dessous pour les mêmes raisons
+    // Fuite memoire dans les 3 ci-dessous pour les mêmes raisons
     Complexe<T>& SQR () const{ return (*this)*(*this); }
     Complexe<T>& CUBE () const{ return (*this)*(*this)*(*this); }
     Complexe<T>& SIGN () const{ return *( new Complexe<T>(this->real().SIGN(), this->imag().SIGN()) ); }
 
-    Complexe<T>& SIN(AngleType angle = Degre)const{Exception("La fonction sinus n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& COS(AngleType angle = Degre)const{Exception("La fonction cosinus n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& TAN(AngleType angle = Degre)const{Exception("La fonction tangente n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& SINH()const{Exception("La fonction sinus hyperbolique n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& COSH()const{Exception("La fonction cosinus hyperbolique n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& TANH()const{Exception("La fonction tangente hyperbolique n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& LN()const{Exception("La fonction logarithme népérien n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& LOG()const{Exception("La fonction logarithme décimal n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& INV()const{Exception("La fonction inverse n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& SQRT()const{Exception("La fonction racine carré n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& FACT()const{Exception("La fonction factorielle n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& EVAL()const{Exception("La fonction eval n'est pas censé être utilisée pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SIN(AngleType angle = Degre)const{Exception("La fonction sinus n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& COS(AngleType angle = Degre)const{Exception("La fonction cosinus n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& TAN(AngleType angle = Degre)const{Exception("La fonction tangente n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SINH()const{Exception("La fonction sinus hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& COSH()const{Exception("La fonction cosinus hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& TANH()const{Exception("La fonction tangente hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& LN()const{Exception("La fonction logarithme neperien n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& LOG()const{Exception("La fonction logarithme decimal n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& INV()const{Exception("La fonction inverse n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SQRT()const{Exception("La fonction racine carre n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& FACT()const{Exception("La fonction factorielle n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& EVAL()const{Exception("La fonction eval n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
 };
 
 
@@ -120,6 +115,7 @@ protected:
     void setString();
 
 public:
+    virtual ~Reel() { }
     bool isNumber() const { return true; }
     double getValeur() const;
     Reel(double valeur  = 0): valeur(valeur) { setString(); }
@@ -154,18 +150,20 @@ protected :
     int den;
     void setString();
     int PGCD(int a, int b);
+
 public :
     Rationnel(int num = 0, int den = 1): Reel((double)num), den(den) { setString(); }
+    virtual ~Rationnel() { }
     void simplifier();
     int getNum() const;
     int getDen() const;
 
-    Rationnel& operator +(const Rationnel & other)const;
-    Rationnel& operator *(const Rationnel & other)const;
-    Rationnel& operator -(const Rationnel & other)const;
-    Rationnel& operator /(const Rationnel & other)const;
-    Rationnel& POW (const Rationnel & other)const;
-    Rationnel& MOD(const Rationnel & other) const;
+    Rationnel& operator +(const Cst & other)const;
+    Rationnel& operator *(const Cst & other)const;
+    Rationnel& operator -(const Cst & other)const;
+    Rationnel& operator /(const Cst & other)const;
+    Rationnel& POW (const Cst & other)const;
+    Rationnel& MOD(const Cst & other) const;
 	
     Rationnel& SQR ()const;
     Rationnel& CUBE ()const;
@@ -187,6 +185,7 @@ public :
 class Entier : public Rationnel
 {
 public:
+    virtual ~Entier() { }
     Entier(int valeur = 0): Rationnel(valeur) { setString(); }
     Entier(const Cst& a_copier) {
         Cst& ref_cmplx_reel = *(new Complexe<Reel>(Reel(1),Reel(1)));
@@ -232,12 +231,12 @@ public:
         setString();
     }
 
-    Entier& operator +(const Entier & other)const;
-    Entier& operator *(const Entier & other)const;
-    Entier& operator -(const Entier & other)const;
-    Entier& operator /(const Entier & other)const;
-    Entier& POW (const Entier & other)const;
-    Entier& MOD(const Entier & other) const;
+    Entier& operator +(const Cst & other)const;
+    Entier& operator *(const Cst & other)const;
+    Entier& operator -(const Cst & other)const;
+    Entier& operator /(const Cst & other)const;
+    Entier& POW (const Cst & other)const;
+    Entier& MOD(const Cst & other) const;
 
     Entier& SQR ()const;
     Entier& CUBE ()const;

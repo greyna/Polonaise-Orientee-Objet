@@ -23,12 +23,31 @@ protected:
 	
 public:
     PileCst(): mode(C), angle(Degre) { }
-    void setMode(ModeType new_mode) { mode = new_mode; }
+    PileCst(PileCst& a_copier) {
+        mode = a_copier.mode;
+        angle = a_copier.angle;
+
+        for (int i=0; i < a_copier.getPile().size(); ++i) {
+            if (a_copier.getPile()[i]->isNumber())
+                createPushCst(a_copier.getPile()[i]->getString());
+            else {
+                Cst& exp = *(new Expression(""));
+                exp = *a_copier.getPile()[i];
+                pushCst(exp);
+            }
+        }
+    }
+    ~PileCst() {
+        clear();
+    }
+
+    void setMode(ModeType new_mode) { mode = new_mode; clear(); }
     void setAngle(AngleType new_angle) { angle = new_angle; }
     QString getString() const { return string_associe; }
+    const QStack<Cst*>& getPile() const { return pileCst; }
     bool videCst() const { return pileCst.isEmpty(); }
 
-    // Ajouter fait appel à résoudre() si l'on ajoute des opérateurs
+    // Ajouter fait appel a resoudre() si l'on ajoute des operateurs
     void ajouter(QString str);
 
 	void swap (int x, int y);
