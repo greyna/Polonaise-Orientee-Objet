@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'onglet.ui'
 **
-** Created: Tue Jun 19 14:09:39 2012
+** Created: Wed Jun 20 19:40:09 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -89,14 +89,12 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLineEdit *lineEdit;
     QPushButton *Buttonenter;
+    QTextEdit *PileCalcul;
+    QTextEdit *PileAffichage;
     QPushButton *Buttonsqrt;
     QPushButton *Buttonsign;
     QPushButton *Buttoninv;
     QPushButton *Buttoneval;
-    QTextEdit *PileCalcul;
-    QTextEdit *PileAffichage;
-    QPushButton *Buttonretablir;
-    QPushButton *Buttonannuler;
     QPushButton *Buttonspace;
     QLabel *label_3;
     QLabel *label_2;
@@ -375,6 +373,18 @@ public:
 
         gridLayout->addWidget(Buttonenter, 12, 6, 1, 1);
 
+        PileCalcul = new QTextEdit(gridLayoutWidget);
+        PileCalcul->setObjectName(QString::fromUtf8("PileCalcul"));
+        PileCalcul->setReadOnly(true);
+
+        gridLayout->addWidget(PileCalcul, 0, 7, 1, 1);
+
+        PileAffichage = new QTextEdit(gridLayoutWidget);
+        PileAffichage->setObjectName(QString::fromUtf8("PileAffichage"));
+        PileAffichage->setReadOnly(true);
+
+        gridLayout->addWidget(PileAffichage, 0, 1, 1, 5);
+
         Buttonsqrt = new QPushButton(gridLayoutWidget);
         Buttonsqrt->setObjectName(QString::fromUtf8("Buttonsqrt"));
 
@@ -395,30 +405,10 @@ public:
 
         gridLayout->addWidget(Buttoneval, 8, 7, 1, 1);
 
-        PileCalcul = new QTextEdit(gridLayoutWidget);
-        PileCalcul->setObjectName(QString::fromUtf8("PileCalcul"));
-
-        gridLayout->addWidget(PileCalcul, 0, 7, 1, 1);
-
-        PileAffichage = new QTextEdit(gridLayoutWidget);
-        PileAffichage->setObjectName(QString::fromUtf8("PileAffichage"));
-
-        gridLayout->addWidget(PileAffichage, 0, 1, 1, 5);
-
-        Buttonretablir = new QPushButton(gridLayoutWidget);
-        Buttonretablir->setObjectName(QString::fromUtf8("Buttonretablir"));
-
-        gridLayout->addWidget(Buttonretablir, 1, 7, 1, 1);
-
-        Buttonannuler = new QPushButton(gridLayoutWidget);
-        Buttonannuler->setObjectName(QString::fromUtf8("Buttonannuler"));
-
-        gridLayout->addWidget(Buttonannuler, 1, 6, 1, 1);
-
         Buttonspace = new QPushButton(gridLayoutWidget);
         Buttonspace->setObjectName(QString::fromUtf8("Buttonspace"));
 
-        gridLayout->addWidget(Buttonspace, 2, 7, 1, 1);
+        gridLayout->addWidget(Buttonspace, 12, 7, 1, 1);
 
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -490,7 +480,6 @@ public:
         Buttonfois->setText(QApplication::translate("Widget", "*", 0, QApplication::UnicodeUTF8));
         Buttonfois->setShortcut(QApplication::translate("Widget", "*", 0, QApplication::UnicodeUTF8));
         Buttondiviser->setText(QApplication::translate("Widget", "/", 0, QApplication::UnicodeUTF8));
-        Buttondiviser->setShortcut(QApplication::translate("Widget", "/", 0, QApplication::UnicodeUTF8));
         Buttonlog->setText(QApplication::translate("Widget", "LOG", 0, QApplication::UnicodeUTF8));
         Buttonfact->setText(QApplication::translate("Widget", "!", 0, QApplication::UnicodeUTF8));
         Buttonfact->setShortcut(QApplication::translate("Widget", "!", 0, QApplication::UnicodeUTF8));
@@ -510,10 +499,6 @@ public:
         Buttoninv->setText(QApplication::translate("Widget", "INV", 0, QApplication::UnicodeUTF8));
         Buttoneval->setText(QApplication::translate("Widget", "EVAL", 0, QApplication::UnicodeUTF8));
         Buttoneval->setShortcut(QApplication::translate("Widget", "Ctrl+Return", 0, QApplication::UnicodeUTF8));
-        Buttonretablir->setText(QApplication::translate("Widget", "R\303\251tablir", 0, QApplication::UnicodeUTF8));
-        Buttonretablir->setShortcut(QApplication::translate("Widget", "Ctrl+Y", 0, QApplication::UnicodeUTF8));
-        Buttonannuler->setText(QApplication::translate("Widget", "Annuler", 0, QApplication::UnicodeUTF8));
-        Buttonannuler->setShortcut(QApplication::translate("Widget", "Ctrl+Z", 0, QApplication::UnicodeUTF8));
         Buttonspace->setText(QApplication::translate("Widget", "SPACE", 0, QApplication::UnicodeUTF8));
         Buttonspace->setShortcut(QApplication::translate("Widget", "Space", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("Widget", "PileAffichage", 0, QApplication::UnicodeUTF8));

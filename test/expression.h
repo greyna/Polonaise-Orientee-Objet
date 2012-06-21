@@ -7,6 +7,9 @@ using namespace std;
 
 namespace calcul {
 
+/*! \class Expression
+ * \brief Classe hérite de la classe Cst et représente une expression
+ */
 class Expression : public Cst {
 protected:
     void setString() { }

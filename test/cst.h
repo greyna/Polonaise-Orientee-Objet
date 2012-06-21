@@ -13,6 +13,9 @@ namespace calcul{
 enum ModeType {Z, Q, R, CZ, CQ, C};
 enum AngleType {Degre, Radian};
 
+/*! \class Cst
+ * \brief Classe abstraite representant les constantes
+ */
 class Cst
 {
 protected :
