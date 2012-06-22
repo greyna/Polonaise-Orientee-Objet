@@ -8,7 +8,7 @@ using namespace std;
 
 /*! \class LogSysteme
  * \brief La classe LogSysteme est la classe charge de gere des logs messages. Elle est implémentée en Design pattern singleton.
- * Elle reçoit une demande d'ajout de log venant du programme et creée ainsi une instance log message qu'elle supprime apres qu'elle aie envoye son message sur la console et dans le fichier.
+ * Elle re?oit une demande d'ajout de log venant du programme et crée ainsi une instance log message qu'elle supprime apres qu'elle aie envoyé son message sur la console et dans le fichier.
  */
 class LogSysteme
 {
@@ -18,7 +18,7 @@ public:
     /*!
      * \brief Ajouter un message dans le log
      * \param : str Le message à écrire dans le log
-     * \param : priorite La priorité du message
+     * \param : priorite La priorit?? du message
      */
     void addLog(QString str, int priorite);
     /*!
@@ -39,7 +39,7 @@ public:
     public:
         /*!
          *  \brief Constructeur de la classe LogMessage
-         *  \param message : Le message à ajouter dans le log
+         *  \param message : Le message à  ajouter dans le log
          *  \param priorite : La priorité du message
          */
         LogMessage(QString message, int  priorite): message(message), priorite(priorite) {}
@@ -68,7 +68,7 @@ public:
      */
     QString getMessage() const {return message;}
     /*!
-     *  \brief Méthode virtual qui crée une boîte de message pour l'exception
+     *  \brief Méthode virtual qui crée une boîte de diaglogue pour l'exception
      */
     const virtual Exception& sendMessage() const {
         QMessageBox msgBox;
@@ -77,7 +77,7 @@ public:
         return *this;
     }
     /*!
-     *  \brief Méthode virtual qui écrit le message dans le fichier log
+     *  \brief Méthode virtual qui envoie le message d'exception au Logsysteme
      */
     const virtual Exception& sendLog() const {LogSysteme::getInstanceLog().addLog("Exception non throw : "+message, 3); return *this;}
 };
@@ -87,25 +87,47 @@ public:
  */
 class FactoryException : public Exception {
 public:
+    /*!
+     *  \brief Constructeur de la classe FactoryException
+     *  \param message : Le message de l'exception
+     */
     FactoryException(QString message): Exception(message){}
+    /*!
+     *  \brief Méthode qui crée une boîte de diaglogue pour l'exception
+     */
     const Exception& sendMessage() const {
         QMessageBox msgBox;
         msgBox.setText("Erreur vitale de factory : "+message+"\n");
         msgBox.exec();
         return *this;
     }
+    /*!
+     *  \brief Méthode qui envoie le message d'exception au Logsysteme
+     */
     const Exception& sendLog() const {LogSysteme::getInstanceLog().addLog("FactoryException : "+message, 1); return *this;}
 };
 
-
+/*! \class OperationException
+ * \brief Hérite de la classe exception
+ */
 class OperationException : public Exception {
 public:
+    /*!
+     *  \brief Constructeur de la classe OperationException
+     *  \param message : Le message de l'exception
+     */
     OperationException(QString message): Exception(message){}
+    /*!
+     *  \brief Méthode qui crée une boîte de diaglogue pour l'exception
+     */
     const Exception& sendMessage() const {
         QMessageBox msgBox;
         msgBox.setText("Erreur vitale d'operation : "+message+"\n");
         msgBox.exec();
         return *this;
     }
+    /*!
+     *  \brief Méthode qui envoie le message d'exception au Logsysteme
+     */
     const Exception& sendLog() const {LogSysteme::getInstanceLog().addLog("OperationException : "+message, 2); return *this;}
 };

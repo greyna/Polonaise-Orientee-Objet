@@ -39,6 +39,9 @@ public:
      */
     MoteurCalcul getMot() {return moteur;}
 
+    /*! \class evenement
+     * \brief Classe interne pour traiter les évenements
+     */
     class evenement {
     public:
         /*!

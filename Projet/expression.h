@@ -15,7 +15,15 @@ protected:
     void setString() { }
 
 public:
+    /*!
+     *  \brief Constructeur de la classe Expression
+     *  \param str : La chaîne de caractère à convertir en Expression
+     */
     Expression(QString str) { string_associe = "'"+str+"'"; }
+    /*!
+     *  \brief Vérifier si l'expression est un nombre
+     *  \return True si l'expression est un nombre
+     */
     bool isNumber() const { return false; }
 
     Expression& operator +(const Cst& other)const;
@@ -24,7 +32,6 @@ public:
     Expression& operator /(const Cst& other)const;
     Expression& POW (const Cst& other)const;
     Expression& MOD(const Cst& other) const;
-
     Expression& SQR ()const;
     Expression& CUBE ()const;
     Expression& SIGN ()const;

@@ -59,6 +59,9 @@ public:
 };
 
 template <class T>
+/*! \class Complexe
+ * \brief Classe Complexe implémentée avec une template
+ */
 class Complexe : public Cst, public complex<T>
 {
 protected :
@@ -88,29 +91,31 @@ public:
             return *(new Complexe<T> ( ((this->real()*temp.real()) + (this->imag()*temp.imag())) / (temp.real().SQR() + temp.imag().SQR()),
                                        ((this->imag()*temp.real()) - (this->real()*temp.imag())) / (temp.real().SQR() + temp.imag().SQR()) ));
     }
-    Complexe<T>& MOD(const Cst& other)const{Exception("La fonction modulo n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& POW(const Cst& other)const{Exception("La fonction puissance n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& MOD(const Cst& other)const{Exception("La fonction modulo n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& POW(const Cst& other)const{Exception("La fonction puissance n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
 
-    // Fuite memoire dans les 3 ci-dessous pour les mêmes raisons
+    // Fuite memoire dans les 3 ci-dessous pour les mèmes raisons
     Complexe<T>& SQR () const{ return (*this)*(*this); }
     Complexe<T>& CUBE () const{ return (*this)*(*this)*(*this); }
     Complexe<T>& SIGN () const{ return *( new Complexe<T>(this->real().SIGN(), this->imag().SIGN()) ); }
 
-    Complexe<T>& SIN(AngleType angle = Degre)const{Exception("La fonction sinus n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& COS(AngleType angle = Degre)const{Exception("La fonction cosinus n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& TAN(AngleType angle = Degre)const{Exception("La fonction tangente n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& SINH()const{Exception("La fonction sinus hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& COSH()const{Exception("La fonction cosinus hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& TANH()const{Exception("La fonction tangente hyperbolique n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& LN()const{Exception("La fonction logarithme neperien n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& LOG()const{Exception("La fonction logarithme decimal n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& INV()const{Exception("La fonction inverse n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& SQRT()const{Exception("La fonction racine carre n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& FACT()const{Exception("La fonction factorielle n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
-    Complexe<T>& EVAL()const{Exception("La fonction eval n'est pas cense être utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SIN(AngleType angle = Degre)const{Exception("La fonction sinus n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& COS(AngleType angle = Degre)const{Exception("La fonction cosinus n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& TAN(AngleType angle = Degre)const{Exception("La fonction tangente n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SINH()const{Exception("La fonction sinus hyperbolique n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& COSH()const{Exception("La fonction cosinus hyperbolique n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& TANH()const{Exception("La fonction tangente hyperbolique n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& LN()const{Exception("La fonction logarithme neperien n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& LOG()const{Exception("La fonction logarithme decimal n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& INV()const{Exception("La fonction inverse n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& SQRT()const{Exception("La fonction racine carre n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& FACT()const{Exception("La fonction factorielle n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
+    Complexe<T>& EVAL()const{Exception("La fonction eval n'est pas cense ètre utilisee pour un complexe").sendMessage().sendLog();return *(new Complexe<T>());}
 };
 
-
+/*! \class Reel
+ * \brief Classe Reel représentant toutes les constantes réelles
+ */
 class Reel : public Cst
 {
 protected:
@@ -120,7 +125,15 @@ protected:
 public:
     virtual ~Reel() { }
     bool isNumber() const { return true; }
+    /*!
+     *  \brief Récupérer la valeur de la constante
+     *  \return La valeur en double
+     */
     double getValeur() const;
+    /*!
+     *  \brief Constructeur par défaut de la classe Reel
+     *  \param valeur : Valeur de la constante réelled
+     */
     Reel(double valeur  = 0): valeur(valeur) { setString(); }
 
     Reel& operator +(const Cst& other)const;
@@ -147,6 +160,9 @@ public:
     Reel& EVAL()const;
 };
 
+/*! \class Rationnel
+ * \brief Classe Rationnel représentant toutes les constantes rationnelles, hérite de la classe Reel
+ */
 class Rationnel :  public Reel
 {
 protected :
@@ -155,8 +171,16 @@ protected :
     int PGCD(int a, int b);
 
 public :
+    /*!
+     *  \brief Constructeur par défaut de la classe Rationnel
+     *  \param num : Valeur du numérateur
+     *  \param den : Valeur du dénominateur
+     */
     Rationnel(int num = 0, int den = 1): Reel((double)num), den(den) { setString(); }
     virtual ~Rationnel() { }
+    /*!
+     *  \brief Méthode de simplification de la constante rationnelle
+     */
     void simplifier();
     int getNum() const;
     int getDen() const;
@@ -185,11 +209,22 @@ public :
     Rationnel& EVAL()const;
 };
 
+/*! \class Entier
+ * \brief Classe Entier représentant toutes les constantes entières, hérite de la classe Rationnel
+ */
 class Entier : public Rationnel
 {
 public:
     virtual ~Entier() { }
+    /*!
+     *  \brief Constructeur par défaut de la classe Entier
+     *  \param valeur : Valeur de la constante
+     */
     Entier(int valeur = 0): Rationnel(valeur) { setString(); }
+    /*!
+     *  \brief Constructeur de recopie de la classe Entier
+     *  \param a_copier : La constante entière à recopier
+     */
     Entier(const Cst& a_copier) {
         Cst& ref_cmplx_reel = *(new Complexe<Reel>(Reel(1),Reel(1)));
         Cst& ref_cmplx_ratio = *(new Complexe<Rationnel>(Rationnel(1,1),Rationnel(1,1)));

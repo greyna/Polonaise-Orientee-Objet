@@ -38,8 +38,11 @@ void Calculatrice:: newOnglet(){
 }
 
 void Calculatrice:: deleteOnglet(unsigned int num){
-    delete liste[num];
-    nb_onglets--;
+    if(nb_onglets > 1){
+    tab->removeTab(num);
+    //delete liste[num];
+    nb_onglets--;}
+
 }
 
 void Calculatrice::duplicate(Onglet* o){

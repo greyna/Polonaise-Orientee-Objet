@@ -26,8 +26,8 @@ public:
      */
     MoteurCalcul(MoteurCalcul& a_copier) { pile_stockage = PileCst(a_copier.pile_stockage); }
     /*!
-     *  \brief Ajouter dans la pile de stockage une chaîne de caractère passée en paramètre et résoud l'expression si le dernier élément est un opérateur
-     *  \param ajout : La chaîne de caractère à ajouter dans la pile de stockage
+     *  \brief Ajouter dans la pile de stockage une cha?ne de caractère passée en paramètre et résoud l'expression si le dernier élément est un opérateur
+     *  \param ajout : La cha?ne de caractère à ajouter dans la pile de stockage
      */
     void ajouterResoudre(QString ajout);
     /*!
