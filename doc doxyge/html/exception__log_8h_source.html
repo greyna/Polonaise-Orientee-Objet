@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>LO21:  Fichier source de C:/Users/William/Dropbox/lo21/projet/Projet/exception_log.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.1.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f22a8e5c88a22dc4c6677222c08d3163.html">Projet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">exception_log.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_log_systeme.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_log_systeme.html" title="La classe LogSysteme est la classe charge de gere des logs messages. Elle est implémentée en Design p...">LogSysteme</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_log_systeme.html" title="La classe LogSysteme est la classe charge de gere des logs messages. Elle est implémentée en Design p...">LogSysteme</a>* instanceUnique;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> addLog(QString str, <span class="keywordtype">int</span> priorite);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_log_systeme.html" title="La classe LogSysteme est la classe charge de gere des logs messages. Elle est implémentée en Design p...">LogSysteme</a>&amp; getInstanceLog();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> libereInstance();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_log_systeme_1_1_log_message.html">   34</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_log_systeme_1_1_log_message.html" title="La classe LogMessage est une classe ephemere qui n&#39;a pour seul but que de diffuser son message sur le...">LogMessage</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        QString message;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> priorite;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_log_systeme_1_1_log_message.html#a0471a9f3e5824be53ba38a7bab8a4dd6">   45</a></span>&#160;        <a class="code" href="class_log_systeme_1_1_log_message.html#a0471a9f3e5824be53ba38a7bab8a4dd6" title="Constructeur de la classe LogMessage.">LogMessage</a>(QString message, <span class="keywordtype">int</span>  priorite): message(message), priorite(priorite) {}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> addFichier();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_exception.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QString message;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_exception.html#aebfa9ca3116e897aa52160793080cc29">   64</a></span>&#160;    <a class="code" href="class_exception.html#aebfa9ca3116e897aa52160793080cc29" title="Constructeur de la classe Exception.">Exception</a>(QString message): message(message){}</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_exception.html#a20b6402f042207e125a9b3776b3c60c6">   69</a></span>&#160;    QString <a class="code" href="class_exception.html#a20b6402f042207e125a9b3776b3c60c6" title="Récupérer le message de l&#39;exception.">getMessage</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> message;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_exception.html#a5874c51943108fae7f792b5a80673b86">   73</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">virtual</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_exception.html#a5874c51943108fae7f792b5a80673b86" title="Méthode virtual qui crée une boîte de diaglogue pour l&#39;exception.">sendMessage</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        QMessageBox msgBox;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        msgBox.setText(<span class="stringliteral">&quot;Erreur non vitale : &quot;</span>+message+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        msgBox.exec();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="class_exception.html#a1a55a11a1379f03e15323c8015fb714e">   82</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">virtual</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_exception.html#a1a55a11a1379f03e15323c8015fb714e" title="Méthode virtual qui envoie le message d&#39;exception au Logsysteme.">sendLog</a>()<span class="keyword"> const </span>{<a class="code" href="class_log_systeme.html#a6d3fb70725266f36fe575a904bc03c5f" title="Récupérer l&#39;instance du LogSysteme.">LogSysteme::getInstanceLog</a>().<a class="code" href="class_log_systeme.html#a0b550ea4cee3de636dccdfd253f1f82e" title="Ajouter un message dans le log.">addLog</a>(<span class="stringliteral">&quot;Exception non throw : &quot;</span>+message, 3); <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_factory_exception.html">   88</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_factory_exception.html" title="On privilégie ses fils ce qui permet d&#39;utiliser des traitements catch differents en fonction du type ...">FactoryException</a> : <span class="keyword">public</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="class_factory_exception.html#a4cfa20edeb011619ff2e42444a0e8de8">   94</a></span>&#160;    <a class="code" href="class_factory_exception.html#a4cfa20edeb011619ff2e42444a0e8de8" title="Constructeur de la classe FactoryException.">FactoryException</a>(QString message): <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>(message){}</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="class_factory_exception.html#ab83319a32911e541798a6b01693c3839">   98</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_factory_exception.html#ab83319a32911e541798a6b01693c3839" title="Méthode qui crée une boîte de diaglogue pour l&#39;exception.">sendMessage</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        QMessageBox msgBox;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        msgBox.setText(<span class="stringliteral">&quot;Erreur vitale de factory : &quot;</span>+message+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        msgBox.exec();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="class_factory_exception.html#aa295318bdcc5145a99fefe7a4aa3639e">  107</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_factory_exception.html#aa295318bdcc5145a99fefe7a4aa3639e" title="Méthode qui envoie le message d&#39;exception au Logsysteme.">sendLog</a>()<span class="keyword"> const </span>{<a class="code" href="class_log_systeme.html#a6d3fb70725266f36fe575a904bc03c5f" title="Récupérer l&#39;instance du LogSysteme.">LogSysteme::getInstanceLog</a>().<a class="code" href="class_log_systeme.html#a0b550ea4cee3de636dccdfd253f1f82e" title="Ajouter un message dans le log.">addLog</a>(<span class="stringliteral">&quot;FactoryException : &quot;</span>+message, 1); <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="class_operation_exception.html">  113</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_operation_exception.html" title="Hérite de la classe exception.">OperationException</a> : <span class="keyword">public</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a> {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="class_operation_exception.html#a4175f17d45ddeb69e496f46d10ee7715">  119</a></span>&#160;    <a class="code" href="class_operation_exception.html#a4175f17d45ddeb69e496f46d10ee7715" title="Constructeur de la classe OperationException.">OperationException</a>(QString message): <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>(message){}</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="class_operation_exception.html#ad0bc3c8efcd32fb7940c02cfbbe2f188">  123</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_operation_exception.html#ad0bc3c8efcd32fb7940c02cfbbe2f188" title="Méthode qui crée une boîte de diaglogue pour l&#39;exception.">sendMessage</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QMessageBox msgBox;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        msgBox.setText(<span class="stringliteral">&quot;Erreur vitale d&#39;operation : &quot;</span>+message+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        msgBox.exec();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="class_operation_exception.html#aeef9c6fa3863aa3ab4c233077f090a65">  132</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_exception.html" title="La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou d...">Exception</a>&amp; <a class="code" href="class_operation_exception.html#aeef9c6fa3863aa3ab4c233077f090a65" title="Méthode qui envoie le message d&#39;exception au Logsysteme.">sendLog</a>()<span class="keyword"> const </span>{<a class="code" href="class_log_systeme.html#a6d3fb70725266f36fe575a904bc03c5f" title="Récupérer l&#39;instance du LogSysteme.">LogSysteme::getInstanceLog</a>().<a class="code" href="class_log_systeme.html#a0b550ea4cee3de636dccdfd253f1f82e" title="Ajouter un message dans le log.">addLog</a>(<span class="stringliteral">&quot;OperationException : &quot;</span>+message, 2); <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi Juin 22 2012 02:13:48 pour LO21 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.1
+</small></address>
+</body>
+</html>

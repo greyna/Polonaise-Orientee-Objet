@@ -1,0 +1,62 @@
+\hypertarget{class_log_systeme}{\section{Référence de la classe Log\-Systeme}
+\label{class_log_systeme}\index{Log\-Systeme@{Log\-Systeme}}
+}
+
+
+La classe \hyperlink{class_log_systeme}{Log\-Systeme} est la classe charge de gere des logs messages. Elle est implémentée en Design pattern singleton. Elle re?oit une demande d'ajout de log venant du programme et crée ainsi une instance log message qu'elle supprime apres qu'elle aie envoyé son message sur la console et dans le fichier.  
+
+
+
+
+{\ttfamily \#include $<$exception\-\_\-log.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_log_systeme_1_1_log_message}{Log\-Message}
+\begin{DoxyCompactList}\small\item\em La classe \hyperlink{class_log_systeme_1_1_log_message}{Log\-Message} est une classe ephemere qui n'a pour seul but que de diffuser son message sur les flux voulu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_log_systeme_a0b550ea4cee3de636dccdfd253f1f82e}{add\-Log} (Q\-String str, int priorite)
+\begin{DoxyCompactList}\small\item\em Ajouter un message dans le log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_log_systeme_a6d3fb70725266f36fe575a904bc03c5f}{static \hyperlink{class_log_systeme}{Log\-Systeme} \& \hyperlink{class_log_systeme_a6d3fb70725266f36fe575a904bc03c5f}{get\-Instance\-Log} ()}\label{class_log_systeme_a6d3fb70725266f36fe575a904bc03c5f}
+
+\begin{DoxyCompactList}\small\item\em Récupérer l'instance du \hyperlink{class_log_systeme}{Log\-Systeme}. \end{DoxyCompactList}\item 
+\hypertarget{class_log_systeme_a746b4b013f9a5efeda1934da779fadc4}{static void \hyperlink{class_log_systeme_a746b4b013f9a5efeda1934da779fadc4}{libere\-Instance} ()}\label{class_log_systeme_a746b4b013f9a5efeda1934da779fadc4}
+
+\begin{DoxyCompactList}\small\item\em Libérer l'instance du \hyperlink{class_log_systeme}{Log\-Systeme}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+La classe \hyperlink{class_log_systeme}{Log\-Systeme} est la classe charge de gere des logs messages. Elle est implémentée en Design pattern singleton. Elle re?oit une demande d'ajout de log venant du programme et crée ainsi une instance log message qu'elle supprime apres qu'elle aie envoyé son message sur la console et dans le fichier. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_log_systeme_a0b550ea4cee3de636dccdfd253f1f82e}{\index{Log\-Systeme@{Log\-Systeme}!add\-Log@{add\-Log}}
+\index{add\-Log@{add\-Log}!LogSysteme@{Log\-Systeme}}
+\subsubsection[{add\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-Systeme\-::add\-Log (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str, }
+\item[{int}]{priorite}
+\end{DoxyParamCaption}
+)}}\label{class_log_systeme_a0b550ea4cee3de636dccdfd253f1f82e}
+
+
+Ajouter un message dans le log. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \-:} & str Le message à écrire dans le log \\
+\hline
+{\em \-:} & priorite La priorit?? du message \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/exception\-\_\-log.\-h\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/exception\-\_\-log.\-cpp\end{DoxyCompactItemize}

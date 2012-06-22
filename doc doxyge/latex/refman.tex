@@ -1,0 +1,94 @@
+\documentclass{book}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\hfuzz=15pt
+\setlength{\emergencystretch}{15pt}
+\hbadness=750
+\tolerance=750
+\begin{document}
+\hypersetup{pageanchor=false,citecolor=blue}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large L\-O21 }\\
+\vspace*{1cm}
+{\large Généré par Doxygen 1.8.1.1}\\
+\vspace*{0.5cm}
+{\small Vendredi Juin 22 2012 02:13:48}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true,citecolor=blue}
+\chapter{Index des classes}
+\input{hierarchy}
+\chapter{Index des classes}
+\input{annotated}
+\chapter{Documentation des classes}
+\input{class_calculatrice}
+\input{classcalcul_1_1_complexe}
+\input{classcalcul_1_1_cst}
+\input{classcalcul_1_1_entier}
+\input{class_onglet_1_1evenement}
+\input{class_exception}
+\input{classcalcul_1_1_expression}
+\input{classcalcul_1_1_factory}
+\input{classcalcul_1_1_factory_complexe}
+\input{class_factory_exception}
+\input{classcalcul_1_1_factory_normal}
+\input{class_log_systeme_1_1_log_message}
+\input{class_log_systeme}
+\input{classcalcul_1_1_moteur_calcul}
+\input{class_onglet}
+\input{class_operation_exception}
+\input{classcalcul_1_1_pile_cst}
+\input{classcalcul_1_1_rationnel}
+\input{classcalcul_1_1_reel}
+\input{class_ui___widget}
+\input{class_ui_1_1_widget}
+\printindex
+\end{document}

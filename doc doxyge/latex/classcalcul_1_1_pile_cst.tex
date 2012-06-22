@@ -1,0 +1,258 @@
+\hypertarget{classcalcul_1_1_pile_cst}{\section{Référence de la classe calcul\-:\-:Pile\-Cst}
+\label{classcalcul_1_1_pile_cst}\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}}
+}
+
+
+Classe representant la pile de constantes.  
+
+
+
+
+{\ttfamily \#include $<$pile\-Cst.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_abf48d20785e9a7318d4cbe94a3270bd2}{\hyperlink{classcalcul_1_1_pile_cst_abf48d20785e9a7318d4cbe94a3270bd2}{Pile\-Cst} ()}\label{classcalcul_1_1_pile_cst_abf48d20785e9a7318d4cbe94a3270bd2}
+
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de la pile de constantes. \end{DoxyCompactList}\item 
+\hyperlink{classcalcul_1_1_pile_cst_aa4896a49196236731d6b7fe9fe33dcb2}{Pile\-Cst} (\hyperlink{classcalcul_1_1_pile_cst}{Pile\-Cst} \&a\-\_\-copier)
+\begin{DoxyCompactList}\small\item\em Constructeur de recopie de la pile de constantes. \end{DoxyCompactList}\item 
+\hypertarget{classcalcul_1_1_pile_cst_a5c08e241bc25523978e672099093816f}{\hyperlink{classcalcul_1_1_pile_cst_a5c08e241bc25523978e672099093816f}{$\sim$\-Pile\-Cst} ()}\label{classcalcul_1_1_pile_cst_a5c08e241bc25523978e672099093816f}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de la pile de constantes. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_a7b4bff3fb4025a773adb6eb5a76d7835}{set\-Mode} (Mode\-Type new\-\_\-mode)
+\begin{DoxyCompactList}\small\item\em Configurer le mode de calcul de la pile. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_adff97011a52d468cdefbe34fce28bb14}{set\-Angle} (Angle\-Type new\-\_\-angle)
+\begin{DoxyCompactList}\small\item\em Configurer le mode d'angle de la pile. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classcalcul_1_1_pile_cst_a6db73772c41a3ec56683563cd5734a1f}{get\-String} () const 
+\begin{DoxyCompactList}\small\item\em Récupérer la chaîne de caractères associée à la pile. \end{DoxyCompactList}\item 
+const Q\-Stack$<$ \hyperlink{classcalcul_1_1_cst}{Cst} $\ast$ $>$ \& \hyperlink{classcalcul_1_1_pile_cst_a464aa7bf622f538756f39014686fcda8}{get\-Pile} () const 
+\begin{DoxyCompactList}\small\item\em Récupérer la pile de constantes. \end{DoxyCompactList}\item 
+bool \hyperlink{classcalcul_1_1_pile_cst_a1e0258011489a1887020d6f89d0f7726}{vide\-Cst} () const 
+\begin{DoxyCompactList}\small\item\em Vérifier si la pile est vide. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_a5709199aa15152382a8fc27d6c54bfb2}{ajouter} (Q\-String str)
+\begin{DoxyCompactList}\small\item\em Ajouter une chaîne de caractères à la pile, fait appel a resoudre() si l'on ajoute des operateurs. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_ad687b59960ffff0b3a36d9dafdbf546a}{swap} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Switcher le Xème et le Yème élément de la pile. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_a1e25dc8e3658e4e06be47fa14101774e}{sum} (int x)
+\begin{DoxyCompactList}\small\item\em Faire la somme des X derniers éléments de la pile. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_pile_cst_ae8b52165e301c368e3720abed2b29fd2}{mean} (int x)
+\begin{DoxyCompactList}\small\item\em Faire la moyenne des X derniers éléments de la pile. \end{DoxyCompactList}\item 
+\hypertarget{classcalcul_1_1_pile_cst_ac44eb9d53d49d03f724e23d50fd1fa9d}{void \hyperlink{classcalcul_1_1_pile_cst_ac44eb9d53d49d03f724e23d50fd1fa9d}{clear} ()}\label{classcalcul_1_1_pile_cst_ac44eb9d53d49d03f724e23d50fd1fa9d}
+
+\begin{DoxyCompactList}\small\item\em Vider la pile. \end{DoxyCompactList}\item 
+\hypertarget{classcalcul_1_1_pile_cst_a7eb7097c900a9c68a32d8adbf0040cd5}{void \hyperlink{classcalcul_1_1_pile_cst_a7eb7097c900a9c68a32d8adbf0040cd5}{dup} ()}\label{classcalcul_1_1_pile_cst_a7eb7097c900a9c68a32d8adbf0040cd5}
+
+\begin{DoxyCompactList}\small\item\em Dupliquer la pile. \end{DoxyCompactList}\item 
+\hypertarget{classcalcul_1_1_pile_cst_a937c81c5a8fbeaa48a83351357d1a163}{void \hyperlink{classcalcul_1_1_pile_cst_a937c81c5a8fbeaa48a83351357d1a163}{drop} ()}\label{classcalcul_1_1_pile_cst_a937c81c5a8fbeaa48a83351357d1a163}
+
+\begin{DoxyCompactList}\small\item\em Supprimer le dernier élément de la pile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a18669dd1a2a2128825ba9d04faf00140}{void {\bfseries set\-String} ()}\label{classcalcul_1_1_pile_cst_a18669dd1a2a2128825ba9d04faf00140}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a5897e5eff8a6f4a5ad579b7a9d561564}{void {\bfseries resoudre} (Q\-String operateur)}\label{classcalcul_1_1_pile_cst_a5897e5eff8a6f4a5ad579b7a9d561564}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_aa749a89f28cde842103b5834ecab0380}{void {\bfseries push\-Cst} (\hyperlink{classcalcul_1_1_cst}{Cst} \&)}\label{classcalcul_1_1_pile_cst_aa749a89f28cde842103b5834ecab0380}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a73d8133d9c8da0f330f5c21e14202cf2}{void {\bfseries create\-Push\-Cst} (Q\-String str)}\label{classcalcul_1_1_pile_cst_a73d8133d9c8da0f330f5c21e14202cf2}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a93809d1514ea7904d3bf3cef470714e4}{void {\bfseries pop\-Cst} ()}\label{classcalcul_1_1_pile_cst_a93809d1514ea7904d3bf3cef470714e4}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a1f2d20a83827d3c16753669175451008}{\hyperlink{classcalcul_1_1_cst}{Cst} \& {\bfseries top\-Cst} ()}\label{classcalcul_1_1_pile_cst_a1f2d20a83827d3c16753669175451008}
+
+\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_ae0433241851178153788e34032fd8ec3}{Q\-String {\bfseries string\-\_\-associe}}\label{classcalcul_1_1_pile_cst_ae0433241851178153788e34032fd8ec3}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a1932758c8ae8a22ef91cc5f513c90bbf}{Q\-Stack$<$ \hyperlink{classcalcul_1_1_cst}{Cst} $\ast$ $>$ {\bfseries pile\-Cst}}\label{classcalcul_1_1_pile_cst_a1932758c8ae8a22ef91cc5f513c90bbf}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a36997375f492a7b97152ffa4b8bec99b}{Mode\-Type {\bfseries mode}}\label{classcalcul_1_1_pile_cst_a36997375f492a7b97152ffa4b8bec99b}
+
+\item 
+\hypertarget{classcalcul_1_1_pile_cst_a152b81fcc5e68d09bc8be2e642372f7e}{Angle\-Type {\bfseries angle}}\label{classcalcul_1_1_pile_cst_a152b81fcc5e68d09bc8be2e642372f7e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe representant la pile de constantes. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classcalcul_1_1_pile_cst_aa4896a49196236731d6b7fe9fe33dcb2}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!Pile\-Cst@{Pile\-Cst}}
+\index{Pile\-Cst@{Pile\-Cst}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{Pile\-Cst}]{\setlength{\rightskip}{0pt plus 5cm}calcul\-::\-Pile\-Cst\-::\-Pile\-Cst (
+\begin{DoxyParamCaption}
+\item[{{\bf Pile\-Cst} \&}]{a\-\_\-copier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_aa4896a49196236731d6b7fe9fe33dcb2}
+
+
+Constructeur de recopie de la pile de constantes. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a\-\_\-copier} & \-: Une référence de pile de constantes à recopier \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classcalcul_1_1_pile_cst_a5709199aa15152382a8fc27d6c54bfb2}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!ajouter@{ajouter}}
+\index{ajouter@{ajouter}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{ajouter}]{\setlength{\rightskip}{0pt plus 5cm}void Pile\-Cst\-::ajouter (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_pile_cst_a5709199aa15152382a8fc27d6c54bfb2}
+
+
+Ajouter une chaîne de caractères à la pile, fait appel a resoudre() si l'on ajoute des operateurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & \-: La chaîne de caractères à ajouter dans la pile \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_a464aa7bf622f538756f39014686fcda8}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!get\-Pile@{get\-Pile}}
+\index{get\-Pile@{get\-Pile}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{get\-Pile}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Stack$<${\bf Cst}$\ast$$>$\& calcul\-::\-Pile\-Cst\-::get\-Pile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_a464aa7bf622f538756f39014686fcda8}
+
+
+Récupérer la pile de constantes. 
+
+\begin{DoxyReturn}{Renvoie}
+La pile de constantes 
+\end{DoxyReturn}
+\hypertarget{classcalcul_1_1_pile_cst_a6db73772c41a3ec56683563cd5734a1f}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!get\-String@{get\-String}}
+\index{get\-String@{get\-String}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{get\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String calcul\-::\-Pile\-Cst\-::get\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_a6db73772c41a3ec56683563cd5734a1f}
+
+
+Récupérer la chaîne de caractères associée à la pile. 
+
+\begin{DoxyReturn}{Renvoie}
+La chaîne de caractères associée 
+\end{DoxyReturn}
+\hypertarget{classcalcul_1_1_pile_cst_ae8b52165e301c368e3720abed2b29fd2}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!mean@{mean}}
+\index{mean@{mean}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{mean}]{\setlength{\rightskip}{0pt plus 5cm}void Pile\-Cst\-::mean (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_pile_cst_ae8b52165e301c368e3720abed2b29fd2}
+
+
+Faire la moyenne des X derniers éléments de la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & \-: Le nombre d'éléments \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_adff97011a52d468cdefbe34fce28bb14}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!set\-Angle@{set\-Angle}}
+\index{set\-Angle@{set\-Angle}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{set\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void calcul\-::\-Pile\-Cst\-::set\-Angle (
+\begin{DoxyParamCaption}
+\item[{Angle\-Type}]{new\-\_\-angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_adff97011a52d468cdefbe34fce28bb14}
+
+
+Configurer le mode d'angle de la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\-\_\-angle} & \-: Le nouveau mode d'angle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_a7b4bff3fb4025a773adb6eb5a76d7835}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!set\-Mode@{set\-Mode}}
+\index{set\-Mode@{set\-Mode}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{set\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void calcul\-::\-Pile\-Cst\-::set\-Mode (
+\begin{DoxyParamCaption}
+\item[{Mode\-Type}]{new\-\_\-mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_a7b4bff3fb4025a773adb6eb5a76d7835}
+
+
+Configurer le mode de calcul de la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\-\_\-mode} & \-: Le nouveau mode de calcul \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_a1e25dc8e3658e4e06be47fa14101774e}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!sum@{sum}}
+\index{sum@{sum}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{sum}]{\setlength{\rightskip}{0pt plus 5cm}void Pile\-Cst\-::sum (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_pile_cst_a1e25dc8e3658e4e06be47fa14101774e}
+
+
+Faire la somme des X derniers éléments de la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & \-: Le nombre d'éléments \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_ad687b59960ffff0b3a36d9dafdbf546a}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!swap@{swap}}
+\index{swap@{swap}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void Pile\-Cst\-::swap (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_pile_cst_ad687b59960ffff0b3a36d9dafdbf546a}
+
+
+Switcher le Xème et le Yème élément de la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & \-: Le numéro du Xème élément \\
+\hline
+{\em y} & \-: Le numéro du Yème élément \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_pile_cst_a1e0258011489a1887020d6f89d0f7726}{\index{calcul\-::\-Pile\-Cst@{calcul\-::\-Pile\-Cst}!vide\-Cst@{vide\-Cst}}
+\index{vide\-Cst@{vide\-Cst}!calcul::PileCst@{calcul\-::\-Pile\-Cst}}
+\subsubsection[{vide\-Cst}]{\setlength{\rightskip}{0pt plus 5cm}bool calcul\-::\-Pile\-Cst\-::vide\-Cst (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_pile_cst_a1e0258011489a1887020d6f89d0f7726}
+
+
+Vérifier si la pile est vide. 
+
+\begin{DoxyReturn}{Renvoie}
+True si la pile est vide 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/pile\-Cst.\-h\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/pile\-Cst.\-cpp\end{DoxyCompactItemize}

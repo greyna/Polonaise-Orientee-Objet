@@ -1,0 +1,121 @@
+\hypertarget{classcalcul_1_1_moteur_calcul}{\section{Référence de la classe calcul\-:\-:Moteur\-Calcul}
+\label{classcalcul_1_1_moteur_calcul}\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}}
+}
+
+
+Classe representant le moteur de calcul.  
+
+
+
+
+{\ttfamily \#include $<$moteur\-Calcul.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcalcul_1_1_moteur_calcul_abc502459962881c55c52273d0445eb27}{\hyperlink{classcalcul_1_1_moteur_calcul_abc502459962881c55c52273d0445eb27}{Moteur\-Calcul} ()}\label{classcalcul_1_1_moteur_calcul_abc502459962881c55c52273d0445eb27}
+
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut du moteur de calcul. \end{DoxyCompactList}\item 
+\hyperlink{classcalcul_1_1_moteur_calcul_a08099d4c72376d5bef0aa14c43f08733}{Moteur\-Calcul} (\hyperlink{classcalcul_1_1_moteur_calcul}{Moteur\-Calcul} \&a\-\_\-copier)
+\begin{DoxyCompactList}\small\item\em Constructeur de recopie du moteur de calcul. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_moteur_calcul_af0433c3b84f5aae984fc94feef12ce4e}{ajouter\-Resoudre} (Q\-String ajout)
+\begin{DoxyCompactList}\small\item\em Ajouter dans la pile de stockage une cha?ne de caractère passée en paramètre et résoud l'expression si le dernier élément est un opérateur. \end{DoxyCompactList}\item 
+const \hyperlink{classcalcul_1_1_pile_cst}{Pile\-Cst} \& \hyperlink{classcalcul_1_1_moteur_calcul_a7283f0b19699bccf7062d3c791832ffa}{get\-Pile} () const 
+\begin{DoxyCompactList}\small\item\em Récupérer la pile de constantes. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_moteur_calcul_a8e4aae58c5cb9102cb724a90c52563d9}{changer\-Mode} (Q\-String mode\-\_\-type=\char`\"{}C\char`\"{})
+\begin{DoxyCompactList}\small\item\em Changer le mode de calcul. \end{DoxyCompactList}\item 
+void \hyperlink{classcalcul_1_1_moteur_calcul_acbd9ee3b5e3b7b3004131bd4a2e4576e}{changer\-Angle} (Q\-String mode\-\_\-angle=\char`\"{}degre\char`\"{})
+\begin{DoxyCompactList}\small\item\em Changer le mode d'angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe representant le moteur de calcul. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classcalcul_1_1_moteur_calcul_a08099d4c72376d5bef0aa14c43f08733}{\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}!Moteur\-Calcul@{Moteur\-Calcul}}
+\index{Moteur\-Calcul@{Moteur\-Calcul}!calcul::MoteurCalcul@{calcul\-::\-Moteur\-Calcul}}
+\subsubsection[{Moteur\-Calcul}]{\setlength{\rightskip}{0pt plus 5cm}calcul\-::\-Moteur\-Calcul\-::\-Moteur\-Calcul (
+\begin{DoxyParamCaption}
+\item[{{\bf Moteur\-Calcul} \&}]{a\-\_\-copier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_moteur_calcul_a08099d4c72376d5bef0aa14c43f08733}
+
+
+Constructeur de recopie du moteur de calcul. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a\-\_\-copier} & \-: a\-\_\-copier Une référence de moteur de calcul à recopier \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classcalcul_1_1_moteur_calcul_af0433c3b84f5aae984fc94feef12ce4e}{\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}!ajouter\-Resoudre@{ajouter\-Resoudre}}
+\index{ajouter\-Resoudre@{ajouter\-Resoudre}!calcul::MoteurCalcul@{calcul\-::\-Moteur\-Calcul}}
+\subsubsection[{ajouter\-Resoudre}]{\setlength{\rightskip}{0pt plus 5cm}void Moteur\-Calcul\-::ajouter\-Resoudre (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{ajout}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_moteur_calcul_af0433c3b84f5aae984fc94feef12ce4e}
+
+
+Ajouter dans la pile de stockage une cha?ne de caractère passée en paramètre et résoud l'expression si le dernier élément est un opérateur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ajout} & \-: La cha?ne de caractère à ajouter dans la pile de stockage \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_moteur_calcul_acbd9ee3b5e3b7b3004131bd4a2e4576e}{\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}!changer\-Angle@{changer\-Angle}}
+\index{changer\-Angle@{changer\-Angle}!calcul::MoteurCalcul@{calcul\-::\-Moteur\-Calcul}}
+\subsubsection[{changer\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Moteur\-Calcul\-::changer\-Angle (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{mode\-\_\-angle = {\ttfamily \char`\"{}degre\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_moteur_calcul_acbd9ee3b5e3b7b3004131bd4a2e4576e}
+
+
+Changer le mode d'angle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mode\-\_\-angle} & \-: Le nouveau mode d'angle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_moteur_calcul_a8e4aae58c5cb9102cb724a90c52563d9}{\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}!changer\-Mode@{changer\-Mode}}
+\index{changer\-Mode@{changer\-Mode}!calcul::MoteurCalcul@{calcul\-::\-Moteur\-Calcul}}
+\subsubsection[{changer\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Moteur\-Calcul\-::changer\-Mode (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{mode\-\_\-type = {\ttfamily \char`\"{}C\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classcalcul_1_1_moteur_calcul_a8e4aae58c5cb9102cb724a90c52563d9}
+
+
+Changer le mode de calcul. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mode\-\_\-type} & \-: Le nouveau mode de calcul \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcalcul_1_1_moteur_calcul_a7283f0b19699bccf7062d3c791832ffa}{\index{calcul\-::\-Moteur\-Calcul@{calcul\-::\-Moteur\-Calcul}!get\-Pile@{get\-Pile}}
+\index{get\-Pile@{get\-Pile}!calcul::MoteurCalcul@{calcul\-::\-Moteur\-Calcul}}
+\subsubsection[{get\-Pile}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Pile\-Cst}\& calcul\-::\-Moteur\-Calcul\-::get\-Pile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcalcul_1_1_moteur_calcul_a7283f0b19699bccf7062d3c791832ffa}
+
+
+Récupérer la pile de constantes. 
+
+\begin{DoxyReturn}{Renvoie}
+La pile de stockage 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/moteur\-Calcul.\-h\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/moteur\-Calcul.\-cpp\end{DoxyCompactItemize}

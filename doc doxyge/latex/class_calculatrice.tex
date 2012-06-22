@@ -1,0 +1,97 @@
+\hypertarget{class_calculatrice}{\section{Référence de la classe Calculatrice}
+\label{class_calculatrice}\index{Calculatrice@{Calculatrice}}
+}
+
+
+Classe implémentée en singleton representant la calculatrice.  
+
+
+
+
+{\ttfamily \#include $<$calculatrice.\-h$>$}
+
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calculatrice_ac83678d76129e12d86d316966469d4fe}{void \hyperlink{class_calculatrice_ac83678d76129e12d86d316966469d4fe}{new\-Onglet} ()}\label{class_calculatrice_ac83678d76129e12d86d316966469d4fe}
+
+\begin{DoxyCompactList}\small\item\em Créer un nouvel onglet. \end{DoxyCompactList}\item 
+void \hyperlink{class_calculatrice_a374f8583ea2be07558de4f7b47d68421}{delete\-Onglet} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Supprimer un onglet dont le numéro est passé en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_calculatrice_afc5406fddd1ac357a7c47fa8dd16b5ab}{duplicate} (\hyperlink{class_onglet}{Onglet} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Dupliquer un onglet passé en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calculatrice_ab75e00a30639b810fbaf1c8492b0dc29}{void \hyperlink{class_calculatrice_ab75e00a30639b810fbaf1c8492b0dc29}{ouvrir} ()}\label{class_calculatrice_ab75e00a30639b810fbaf1c8492b0dc29}
+
+\begin{DoxyCompactList}\small\item\em Ouvrir la calculatrice. \end{DoxyCompactList}\item 
+Q\-Tab\-Widget $\ast$ \hyperlink{class_calculatrice_aef0bdca98f5cafc0e28183b923ae50a3}{get\-Tab} ()
+\begin{DoxyCompactList}\small\item\em Methode qui retourne le Q\-Tab\-Widget qui contient les onglets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calculatrice_ae0e574f8aa45146ba02bc609ccb2e8a8}{static \hyperlink{class_calculatrice}{Calculatrice} \& \hyperlink{class_calculatrice_ae0e574f8aa45146ba02bc609ccb2e8a8}{Get\-Instance} ()}\label{class_calculatrice_ae0e574f8aa45146ba02bc609ccb2e8a8}
+
+\begin{DoxyCompactList}\small\item\em Récupérer l'instance de la calculatrice. \end{DoxyCompactList}\item 
+\hypertarget{class_calculatrice_ae7633e9ed55d260d2ce81792a0d2aee2}{static void \hyperlink{class_calculatrice_ae7633e9ed55d260d2ce81792a0d2aee2}{Libere\-Instance} ()}\label{class_calculatrice_ae7633e9ed55d260d2ce81792a0d2aee2}
+
+\begin{DoxyCompactList}\small\item\em Libérer l'instance de la calculatrice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe implémentée en singleton representant la calculatrice. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_calculatrice_a374f8583ea2be07558de4f7b47d68421}{\index{Calculatrice@{Calculatrice}!delete\-Onglet@{delete\-Onglet}}
+\index{delete\-Onglet@{delete\-Onglet}!Calculatrice@{Calculatrice}}
+\subsubsection[{delete\-Onglet}]{\setlength{\rightskip}{0pt plus 5cm}void Calculatrice\-::delete\-Onglet (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_calculatrice_a374f8583ea2be07558de4f7b47d68421}
+
+
+Supprimer un onglet dont le numéro est passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num} & \-: Numéro de l'onglet à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calculatrice_afc5406fddd1ac357a7c47fa8dd16b5ab}{\index{Calculatrice@{Calculatrice}!duplicate@{duplicate}}
+\index{duplicate@{duplicate}!Calculatrice@{Calculatrice}}
+\subsubsection[{duplicate}]{\setlength{\rightskip}{0pt plus 5cm}void Calculatrice\-::duplicate (
+\begin{DoxyParamCaption}
+\item[{{\bf Onglet} $\ast$}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_calculatrice_afc5406fddd1ac357a7c47fa8dd16b5ab}
+
+
+Dupliquer un onglet passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em o} & \-: L'onglet à dupliquer \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calculatrice_aef0bdca98f5cafc0e28183b923ae50a3}{\index{Calculatrice@{Calculatrice}!get\-Tab@{get\-Tab}}
+\index{get\-Tab@{get\-Tab}!Calculatrice@{Calculatrice}}
+\subsubsection[{get\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Tab\-Widget$\ast$ Calculatrice\-::get\-Tab (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_calculatrice_aef0bdca98f5cafc0e28183b923ae50a3}
+
+
+Methode qui retourne le Q\-Tab\-Widget qui contient les onglets. 
+
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur le Q\-Tab\-Widget 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/calculatrice.\-h\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/calculatrice.\-cpp\end{DoxyCompactItemize}

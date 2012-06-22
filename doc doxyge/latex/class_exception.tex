@@ -1,0 +1,81 @@
+\hypertarget{class_exception}{\section{Référence de la classe Exception}
+\label{class_exception}\index{Exception@{Exception}}
+}
+
+
+La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou des logs type \char`\"{}pertes de donnees pour un sinus d'entier\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$exception\-\_\-log.\-h$>$}
+
+Graphe d'héritage de Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_exception}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_exception_aebfa9ca3116e897aa52160793080cc29}{Exception} (Q\-String message)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_exception}{Exception}. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_exception_a20b6402f042207e125a9b3776b3c60c6}{get\-Message} () const 
+\begin{DoxyCompactList}\small\item\em Récupérer le message de l'exception. \end{DoxyCompactList}\item 
+\hypertarget{class_exception_a5874c51943108fae7f792b5a80673b86}{virtual const \hyperlink{class_exception}{Exception} \& \hyperlink{class_exception_a5874c51943108fae7f792b5a80673b86}{send\-Message} () const }\label{class_exception_a5874c51943108fae7f792b5a80673b86}
+
+\begin{DoxyCompactList}\small\item\em Méthode virtual qui crée une boîte de diaglogue pour l'exception. \end{DoxyCompactList}\item 
+\hypertarget{class_exception_a1a55a11a1379f03e15323c8015fb714e}{virtual const \hyperlink{class_exception}{Exception} \& \hyperlink{class_exception_a1a55a11a1379f03e15323c8015fb714e}{send\-Log} () const }\label{class_exception_a1a55a11a1379f03e15323c8015fb714e}
+
+\begin{DoxyCompactList}\small\item\em Méthode virtual qui envoie le message d'exception au Logsysteme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_exception_a0ecd6018bc7499fe883e5ccedb142e19}{Q\-String {\bfseries message}}\label{class_exception_a0ecd6018bc7499fe883e5ccedb142e19}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+La classe représentant une exception. On utilise exception sans throw, pour envoyer des messages ou des logs type \char`\"{}pertes de donnees pour un sinus d'entier\char`\"{}. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_exception_aebfa9ca3116e897aa52160793080cc29}{\index{Exception@{Exception}!Exception@{Exception}}
+\index{Exception@{Exception}!Exception@{Exception}}
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception\-::\-Exception (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_exception_aebfa9ca3116e897aa52160793080cc29}
+
+
+Constructeur de la classe \hyperlink{class_exception}{Exception}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em message} & \-: Le message de l'exception \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_exception_a20b6402f042207e125a9b3776b3c60c6}{\index{Exception@{Exception}!get\-Message@{get\-Message}}
+\index{get\-Message@{get\-Message}!Exception@{Exception}}
+\subsubsection[{get\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Exception\-::get\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_exception_a20b6402f042207e125a9b3776b3c60c6}
+
+
+Récupérer le message de l'exception. 
+
+\begin{DoxyReturn}{Renvoie}
+Le message de l'exception 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-William/\-Dropbox/lo21/projet/\-Projet/exception\-\_\-log.\-h\end{DoxyCompactItemize}

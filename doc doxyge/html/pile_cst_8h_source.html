@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>LO21:  Fichier source de C:/Users/William/Dropbox/lo21/projet/Projet/pileCst.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">LO21
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.1.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f22a8e5c88a22dc4c6677222c08d3163.html">Projet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pileCst.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QStack&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;expression.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>calcul {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalcul_1_1_pile_cst.html" title="Classe representant la pile de constantes.">PileCst</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    QString string_associe;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    QStack&lt;Cst*&gt; pileCst;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ModeType mode;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    AngleType angle;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> setString();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> resoudre(QString operateur);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> pushCst(<a class="code" href="classcalcul_1_1_cst.html" title="Classe abstraite representant les constantes.">Cst</a>&amp;);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> createPushCst(QString str);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> popCst();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classcalcul_1_1_cst.html" title="Classe abstraite representant les constantes.">Cst</a>&amp; topCst();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#abf48d20785e9a7318d4cbe94a3270bd2">   31</a></span>&#160;    <a class="code" href="classcalcul_1_1_pile_cst.html#abf48d20785e9a7318d4cbe94a3270bd2" title="Constructeur par défaut de la pile de constantes.">PileCst</a>(): mode(C), angle(Degre) { }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#aa4896a49196236731d6b7fe9fe33dcb2">   36</a></span>&#160;    <a class="code" href="classcalcul_1_1_pile_cst.html#aa4896a49196236731d6b7fe9fe33dcb2" title="Constructeur de recopie de la pile de constantes.">PileCst</a>(<a class="code" href="classcalcul_1_1_pile_cst.html" title="Classe representant la pile de constantes.">PileCst</a>&amp; a_copier) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        mode = a_copier.mode;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        angle = a_copier.angle;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; a_copier.<a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8" title="Récupérer la pile de constantes.">getPile</a>().size(); ++i) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (a_copier.<a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8" title="Récupérer la pile de constantes.">getPile</a>()[i]-&gt;isNumber())</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                createPushCst(a_copier.<a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8" title="Récupérer la pile de constantes.">getPile</a>()[i]-&gt;getString());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classcalcul_1_1_cst.html" title="Classe abstraite representant les constantes.">Cst</a>&amp; exp = *(<span class="keyword">new</span> <a class="code" href="classcalcul_1_1_expression.html" title="Classe hérite de la classe Cst et représente une expression.">Expression</a>(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                exp = *a_copier.<a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8" title="Récupérer la pile de constantes.">getPile</a>()[i];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                pushCst(exp);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#a5c08e241bc25523978e672099093816f">   53</a></span>&#160;    <a class="code" href="classcalcul_1_1_pile_cst.html#a5c08e241bc25523978e672099093816f" title="Destructeur de la pile de constantes.">~PileCst</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classcalcul_1_1_pile_cst.html#ac44eb9d53d49d03f724e23d50fd1fa9d" title="Vider la pile.">clear</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#a7b4bff3fb4025a773adb6eb5a76d7835">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a7b4bff3fb4025a773adb6eb5a76d7835" title="Configurer le mode de calcul de la pile.">setMode</a>(ModeType new_mode) { mode = new_mode; <a class="code" href="classcalcul_1_1_pile_cst.html#ac44eb9d53d49d03f724e23d50fd1fa9d" title="Vider la pile.">clear</a>(); }</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#adff97011a52d468cdefbe34fce28bb14">   65</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#adff97011a52d468cdefbe34fce28bb14" title="Configurer le mode d&#39;angle de la pile.">setAngle</a>(AngleType new_angle) { angle = new_angle; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#a6db73772c41a3ec56683563cd5734a1f">   70</a></span>&#160;    QString <a class="code" href="classcalcul_1_1_pile_cst.html#a6db73772c41a3ec56683563cd5734a1f" title="Récupérer la chaîne de caractères associée à la pile.">getString</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> string_associe; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8">   75</a></span>&#160;    <span class="keyword">const</span> QStack&lt;Cst*&gt;&amp; <a class="code" href="classcalcul_1_1_pile_cst.html#a464aa7bf622f538756f39014686fcda8" title="Récupérer la pile de constantes.">getPile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pileCst; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classcalcul_1_1_pile_cst.html#a1e0258011489a1887020d6f89d0f7726">   80</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a1e0258011489a1887020d6f89d0f7726" title="Vérifier si la pile est vide.">videCst</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pileCst.isEmpty(); }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a5709199aa15152382a8fc27d6c54bfb2" title="Ajouter une chaîne de caractères à la pile, fait appel a resoudre() si l&#39;on ajoute des operateurs...">ajouter</a>(QString str);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#ad687b59960ffff0b3a36d9dafdbf546a" title="Switcher le Xème et le Yème élément de la pile.">swap</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a1e25dc8e3658e4e06be47fa14101774e" title="Faire la somme des X derniers éléments de la pile.">sum</a>(<span class="keywordtype">int</span> x);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#ae8b52165e301c368e3720abed2b29fd2" title="Faire la moyenne des X derniers éléments de la pile.">mean</a> (<span class="keywordtype">int</span> x);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#ac44eb9d53d49d03f724e23d50fd1fa9d" title="Vider la pile.">clear</a> ();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a7eb7097c900a9c68a32d8adbf0040cd5" title="Dupliquer la pile.">dup</a> ();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcalcul_1_1_pile_cst.html#a937c81c5a8fbeaa48a83351357d1a163" title="Supprimer le dernier élément de la pile.">drop</a> ();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi Juin 22 2012 02:13:48 pour LO21 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.1
+</small></address>
+</body>
+</html>
